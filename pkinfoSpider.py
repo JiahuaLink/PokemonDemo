@@ -216,7 +216,7 @@ def crawl():
     # while fm != 'txt' and fm != 'json' and fm != 'csv':
     #     fm = input('输入错误，请重新输入文件保存格式（txt、json、csv）：')
     #采集宝可梦数量
-    PK_NUM = 20
+    PK_NUM = 30
     fm = 'csv'
     fd = openfile(fm)
     print('开始爬取')
