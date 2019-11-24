@@ -12,7 +12,7 @@
 # here put the import lib
 
 import pandas as pd
-path = "D:/python/pkmon/battle.xls"
+path = "D:/python/pkmon/battle.xls" 
 data = pd.DataFrame(pd.read_excel(path))
 
 # 获取行名为0这一行的内容
