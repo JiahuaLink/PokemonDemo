@@ -31,13 +31,14 @@ def get_page(url):
 
 
 # 解析网页源代码，获取下一页链接
-def parse4link(html, base_url,index):
+def parse4link(html, base_url, index):
     link = None
-    index+=3
+    index += 3
     html_elem = etree.HTML(html)
     # 获取a标签的属性4开始
     url = html_elem.xpath(
-        '//*[@id="mw-content-text"]/div/table[1]/tbody/tr[%s]/td[2]/a/@href' % index)
+        '//*[@id="mw-content-text"]/div/table[1]/tbody/tr[%s]/td[2]/a/@href' %
+        index)
 
     if url:
         link = base_url + url[0]
@@ -81,7 +82,6 @@ def parse4data(html):
         '//table[contains(@class,"roundy a-r at-c")]//tr[1]//a[contains(@title,"宝可梦列表（按全国图鉴编号）")]/text()'
     )
     # 名称
-
     pkmon_name = pkdex_content.xpath(
         POLY_XPATH +
         '//table[contains(@class,"roundy a-r at-c")]//td//span//b/text()')
@@ -136,11 +136,11 @@ def parse4data(html):
         '//table[@class="bg-速度 bd-速度 bw-1"]//th[@class="bgl-速度"]/text()')
     # 如果有两个属性
     if len(pkmon_type) >= 2:
-        pkmon_type1 = [pkmon_type[0]]
-        pkmon_type2 = [pkmon_type[1]]
+        pkmon_type1 = [pkmon_type[0].replace(u'\xa0', u'')]
+        pkmon_type2 = [pkmon_type[1].replace(u'\xa0', u'')]
 
     else:
-        pkmon_type1 = pkmon_type
+        pkmon_type1 = ["".join(pkmon_type).replace(u'\xa0', u'')]
         pkmon_type2 = [""]
     # 如果有两个特性
     if len(ability) >= 2:
@@ -151,16 +151,23 @@ def parse4data(html):
         ability2 = [""]
     # 如果有两个形态
     if len(hp_value) >= 2:
-        serialNum = [serialNum[0]]
-        pkmon_name = [pkmon_name[0]]
-        atk_value = [atk_value[0].strip]
-        atk_sp_value = [atk_sp_value[0]]
-        defend_value = [defend_value[0]]
-        defend_sp_value = [defend_sp_value[0]]
-        hp_value = [hp_value[0]]
-        speed_value = [speed_value[0]]
+        serialNum = [serialNum[0].replace('\n', '')]
+        pkmon_name = [pkmon_name[0].replace('\n', '')]
+        atk_value = [atk_value[0].replace('\n', '')]
+        atk_sp_value = [atk_sp_value[0].replace('\n', '')]
+        defend_value = [defend_value[0].replace('\n', '')]
+        defend_sp_value = [defend_sp_value[0].replace('\n', '')]
+        hp_value = [hp_value[0].replace('\n', '')]
+        speed_value = [speed_value[0].replace('\n', '')]
     else:
-        pass
+        serialNum = ["".join(serialNum).replace(u'\n', u'')]
+        pkmon_name = ["".join(pkmon_name).replace(u'\n', u'')]
+        atk_value = ["".join(atk_value).replace(u'\n', u'')]
+        atk_sp_value = ["".join(atk_sp_value).replace(u'\n', u'')]
+        defend_value = ["".join(defend_value).replace(u'\n', u'')]
+        defend_sp_value = ["".join(defend_sp_value).replace(u'\n', u'')]
+        hp_value = ["".join(hp_value).replace(u'\n', u'')]
+        speed_value = ["".join(speed_value).replace(u'\n', u'')]
     print(serialNum, pkmon_name, pkmon_type1, pkmon_type2, ability1, ability2,
           hidden_ability, hp_value, atk_value, defend_value, atk_sp_value,
           defend_sp_value, speed_value)
@@ -214,15 +221,15 @@ def crawl():
     fd = openfile(fm)
     print('开始爬取')
     pkdex_url = base_url + 'wiki/%E5%AE%9D%E5%8F%AF%E6%A2%A6%E5%88%97%E8%A1%A8%EF%BC%88%E6%8C%89%E5%85%A8%E5%9B%BD%E5%9B%BE%E9%89%B4%E7%BC%96%E5%8F%B7%EF%BC%89/%E7%AE%80%E5%8D%95%E7%89%88'
-    for i in range(1,251):
+    for i in range(1, PK_NUM):
         html = get_page(pkdex_url)
-        link = parse4link(html, base_url,i)
+        link = parse4link(html, base_url, i)
 
         #print('正在爬取 ' + str(link) + ' ......')
         pkmonHtml = get_page(link)
 
         data = parse4data(pkmonHtml)
-    
+
         save2file(fm, fd, data)
     time.sleep(random.random())
 
@@ -231,4 +238,4 @@ def crawl():
 
 
 if __name__ == '__main__':
-    crawl()  
+    crawl()
