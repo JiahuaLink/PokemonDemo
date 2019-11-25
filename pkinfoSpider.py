@@ -61,9 +61,9 @@ def parse4data(html):
 
     isStrength = pkdex_content.xpath(
         '//div[@class="tabbertab  tabbertabhide"]')
-    #是否区分时世代
+    #是否区分世代
     isExpGen = pkdex_content.xpath(
-        '//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[1]/span[contains(@original-title,"第一世代至第四世代")]/text()'
+        '//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[1]/span[contains(@original-title,"第五世代起")]/text()'
     )
     if isPoly != []:
         POLY_XPATH = '//tr[contains(@class,"_toggle form1")]'
@@ -205,7 +205,7 @@ def openfile(fm):
     elif fm == 'json':
         fd = open('pkmondex.json', 'w', encoding='utf-8')
     elif fm == 'csv':
-        fd = open('pkmondex.csv', 'w', encoding='utf-8', newline='')
+        fd = open('pkmondex.csv', 'a+', encoding='utf-8', newline='')
     return fd
 
 
@@ -235,12 +235,13 @@ def crawl():
     # while fm != 'txt' and fm != 'json' and fm != 'csv':
     #     fm = input('输入错误，请重新输入文件保存格式（txt、json、csv）：')
     # 采集宝可梦数量
-    PK_NUM = 30
+    start_num = 30
+    end_num = 151
     fm = 'csv'
     fd = openfile(fm)
     print('开始爬取')
     pkdex_url = base_url + 'wiki/%E5%AE%9D%E5%8F%AF%E6%A2%A6%E5%88%97%E8%A1%A8%EF%BC%88%E6%8C%89%E5%85%A8%E5%9B%BD%E5%9B%BE%E9%89%B4%E7%BC%96%E5%8F%B7%EF%BC%89/%E7%AE%80%E5%8D%95%E7%89%88'
-    for i in range(1, PK_NUM):
+    for i in range(start_num, end_num):
         html = get_page(pkdex_url)
         link = parse4link(html, base_url, i)
 
@@ -250,7 +251,7 @@ def crawl():
         data = parse4data(pkmonHtml)
 
         save2file(fm, fd, data)
-    time.sleep(random.random())
+    #time.sleep(random.random())
 
     fd.close()
     print('结束爬取')
