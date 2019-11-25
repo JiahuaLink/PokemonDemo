@@ -3,7 +3,7 @@
 '''
 @File    :   pkinfoSpider.py
 @Time    :   2019/11/24 19:04:48
-@Author  :   liajihua  
+@Author  :   liajihua
 @Version :   1.0
 @Contact :   840132699@qq.com
 @Desc    :   None
@@ -215,7 +215,7 @@ def crawl():
     # fm = input('请输入文件保存格式（txt、json、csv）：')
     # while fm != 'txt' and fm != 'json' and fm != 'csv':
     #     fm = input('输入错误，请重新输入文件保存格式（txt、json、csv）：')
-    #采集宝可梦数量
+    # 采集宝可梦数量
     PK_NUM = 30
     fm = 'csv'
     fd = openfile(fm)
@@ -225,7 +225,7 @@ def crawl():
         html = get_page(pkdex_url)
         link = parse4link(html, base_url, i)
 
-        #print('正在爬取 ' + str(link) + ' ......')
+        # print('正在爬取 ' + str(link) + ' ......')
         pkmonHtml = get_page(link)
 
         data = parse4data(pkmonHtml)
