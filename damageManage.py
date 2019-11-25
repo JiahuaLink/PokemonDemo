@@ -12,12 +12,14 @@
 # here put the import lib
 
 import pandas as pd
+import sys
 
 
 class Damage_Analyse():
     # 获取行名为0这一行的内容
     # 获取行为 2 列为2 的值，即格斗对一般的伤害
-    path = "D:/python/pkmon/battle.xls"    
+    abspath = sys.path[0]
+    path = abspath+"\\config\\battle.xls"
     
     def init_data(self):
         data = pd.DataFrame(pd.read_excel(self.path))
@@ -76,7 +78,6 @@ class Damage_Analyse():
         print("总伤害是%s倍" % damageTimes)
         self.damage_result_display(str(damageTimes))
 
-
     def base_damage(self, attr1, attr2):
         # 传入属性名称  输出基本伤害倍数
         data = self.init_data()
@@ -92,6 +93,7 @@ class Damage_Analyse():
     # 获取该属性的下标值
     def get_type_index(self, attr_name):
         return int(self.dict[attr_name])
+
 
 if __name__ == "__main__":
     da = Damage_Analyse()

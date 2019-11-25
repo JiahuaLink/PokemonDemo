@@ -12,6 +12,7 @@
 import pandas as pd
 import csv
 import json
+import sys
 
 
 # here put the import lib
@@ -53,9 +54,10 @@ class FileManager():
 
 
 class IninConfig():
-    CSV_PATH = "D:/python/pkmon/pkmondex.csv"
+    abspath = sys.path[0]
+    path = abspath+"\\config\\pkmondex.csv"
     @classmethod
     def init_data(self):
         # header==None不把第一列作为属性，避免第一行不能用
-        data = pd.DataFrame(pd.read_csv(self.CSV_PATH, header=None))
+        data = pd.DataFrame(pd.read_csv(self.path, header=None))
         return data

@@ -17,8 +17,7 @@ class RandomNum():
         return random.randint(0, index)
 
     def random_index(self, arr, rate):
-        """随机变量的概率函数"""
-        #
+        '''随机变量的概率函数'''
         # 参数rate为list<int>
         # 返回概率事件的下标索引
         index = 0
@@ -28,5 +27,5 @@ class RandomNum():
         return index
 
     def random_individual_value(self, index):
-        # 随机六项个体值
+        ''' 随机六项个体值 '''
         return[random.randint(0, index)for _ in range(6)]
