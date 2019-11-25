@@ -61,6 +61,10 @@ def parse4data(html):
 
     isStrength = pkdex_content.xpath(
         '//div[@class="tabbertab  tabbertabhide"]')
+    #是否区分时世代
+    isExpGen = pkdex_content.xpath(
+        '//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[1]/span[contains(@original-title,"第一世代至第四世代")]/text()'
+    )
     if isPoly != []:
         POLY_XPATH = '//tr[contains(@class,"_toggle form1")]'
         print("有多形态信息")
@@ -75,6 +79,14 @@ def parse4data(html):
     else:
         STRENGTH_XPATH = ''
         print("没有多形态种族值")
+    print(isExpGen)
+    if isExpGen != []:
+        Gen_XPATH = POLY_XPATH + '//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[1]/span[contains(@original-title,"第一世代至第四世代")]/text()'
+        print("区分世代经验值")
+    else:
+        Gen_XPATH = POLY_XPATH + '//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[contains(string(),"基础经验值")]'
+
+        print("没有区分世代经验值")
 
     # 编号
     serialNum = pkdex_content.xpath(
@@ -109,15 +121,8 @@ def parse4data(html):
     print(hidden_ability)
 
     # 基础经验值
-    base_exp = pkdex_content.xpath(
-        POLY_XPATH +
-        '//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[0]/span[@original-title="第一世代至第四世代"]/text()'
-    )
-    #对战经验值
-    battle_exp = pkdex_content.xpath(
-        POLY_XPATH +
-        '//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[1]/span[@original-title="第一世代至第四世代"]/text()'
-    )
+    base_exp = pkdex_content.xpath(Gen_XPATH)
+    #print(type(base_exp))
     # 体力值
 
     hp_value = pkdex_content.xpath(
@@ -162,6 +167,7 @@ def parse4data(html):
         ability1 = ability
         ability2 = [""]
     # 如果有两个形态
+
     if len(hp_value) >= 2:
         serialNum = [serialNum[0].replace('\n', '')]
         pkmon_name = [pkmon_name[0].replace('\n', '')]
@@ -171,8 +177,6 @@ def parse4data(html):
         defend_sp_value = [defend_sp_value[0].replace('\n', '')]
         hp_value = [hp_value[0].replace('\n', '')]
         speed_value = [speed_value[0].replace('\n', '')]
-        base_exp = [base_exp[0].replace('\n', '')]
-        battle_exp =  [battle_exp[0].replace('\n', '')]
     else:
         serialNum = ["".join(serialNum).replace(u'\n', u'')]
         pkmon_name = ["".join(pkmon_name).replace(u'\n', u'')]
@@ -182,15 +186,14 @@ def parse4data(html):
         defend_sp_value = ["".join(defend_sp_value).replace(u'\n', u'')]
         hp_value = ["".join(hp_value).replace(u'\n', u'')]
         speed_value = ["".join(speed_value).replace(u'\n', u'')]
-        base_exp = ["".join(hp_value).replace(u'\n', u'')]
-        battle_exp = ["".join(speed_value).replace(u'\n', u'')]
+
     print(serialNum, pkmon_name, pkmon_type1, pkmon_type2, ability1, ability2,
           hidden_ability, hp_value, atk_value, defend_value, atk_sp_value,
-          defend_sp_value, speed_value, base_exp, battle_exp)
+          defend_sp_value, speed_value)
 
     data = zip(serialNum, pkmon_name, pkmon_type1, pkmon_type2, ability1,
                ability2, hidden_ability, hp_value, atk_value, defend_value,
-               atk_sp_value, defend_sp_value, speed_value, base_exp, battle_exp)
+               atk_sp_value, defend_sp_value, speed_value)
     return data
 
 

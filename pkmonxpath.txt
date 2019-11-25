@@ -31,6 +31,13 @@ HP
 //div[@class="tabbertab  "]//table[@class="bg-特防 bd-特防 bw-1"]//th[@class="bgl-特防"]/text()
 //div[@class="tabbertab  "]//table[@class="bg-速度 bd-速度 bw-1"]//th[@class="bgl-速度"]/text()
 #基礎經驗值和對戰經驗值  //td[1]  td[2]
+
+有区分世代的 要这个
 //table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[1]/span[@original-title="第一世代至第四世代"]/text()
 
+//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[contains(string(),"基础经验值")]	
+
+
 //tr[contains(@class,"_toggle form1")]//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[1]/span[@original-title="第一世代至第四世代"]/text()
+
+//*[@id="mw-content-text"]/div/table[2]/tbody/tr[13]/td/table/tbody/tr/td/table/tbody/tr[2]/td[1]/text()
