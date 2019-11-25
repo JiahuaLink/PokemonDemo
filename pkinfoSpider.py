@@ -107,6 +107,17 @@ def parse4data(html):
         '//table[@class="roundy bgwhite fulltable"]//tr[1]/td[2]/a[contains(@title,"特性")]/text()'
     )
     print(hidden_ability)
+
+    # 基础经验值
+    base_exp = pkdex_content.xpath(
+        POLY_XPATH +
+        '//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[0]/span[@original-title="第一世代至第四世代"]/text()'
+    )
+    #对战经验值
+    battle_exp = pkdex_content.xpath(
+        POLY_XPATH +
+        '//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[1]/span[@original-title="第一世代至第四世代"]/text()'
+    )
     # 体力值
 
     hp_value = pkdex_content.xpath(
@@ -134,6 +145,7 @@ def parse4data(html):
     speed_value = pkdex_content.xpath(
         STRENGTH_XPATH +
         '//table[@class="bg-速度 bd-速度 bw-1"]//th[@class="bgl-速度"]/text()')
+
     # 如果有两个属性
     if len(pkmon_type) >= 2:
         pkmon_type1 = [pkmon_type[0].replace(u'\xa0', u'')]
@@ -159,6 +171,8 @@ def parse4data(html):
         defend_sp_value = [defend_sp_value[0].replace('\n', '')]
         hp_value = [hp_value[0].replace('\n', '')]
         speed_value = [speed_value[0].replace('\n', '')]
+        base_exp = [base_exp[0].replace('\n', '')]
+        battle_exp =  [battle_exp[0].replace('\n', '')]
     else:
         serialNum = ["".join(serialNum).replace(u'\n', u'')]
         pkmon_name = ["".join(pkmon_name).replace(u'\n', u'')]
@@ -168,13 +182,15 @@ def parse4data(html):
         defend_sp_value = ["".join(defend_sp_value).replace(u'\n', u'')]
         hp_value = ["".join(hp_value).replace(u'\n', u'')]
         speed_value = ["".join(speed_value).replace(u'\n', u'')]
+        base_exp = ["".join(hp_value).replace(u'\n', u'')]
+        battle_exp = ["".join(speed_value).replace(u'\n', u'')]
     print(serialNum, pkmon_name, pkmon_type1, pkmon_type2, ability1, ability2,
           hidden_ability, hp_value, atk_value, defend_value, atk_sp_value,
-          defend_sp_value, speed_value)
+          defend_sp_value, speed_value, base_exp, battle_exp)
 
     data = zip(serialNum, pkmon_name, pkmon_type1, pkmon_type2, ability1,
                ability2, hidden_ability, hp_value, atk_value, defend_value,
-               atk_sp_value, defend_sp_value, speed_value)
+               atk_sp_value, defend_sp_value, speed_value, base_exp, battle_exp)
     return data
 
 
