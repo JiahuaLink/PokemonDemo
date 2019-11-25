@@ -195,10 +195,10 @@ def save2file(fm, fd, data):
     if fm == 'txt':
         for item in data:
             fd.write('----------------------------------------\n')
-            fd.write('agree：' + str(item[0]) + '\n')
-            fd.write('authod：' + str(item[1]) + '\n')
-            fd.write('star：' + str(item[2]) + '\n')
-            fd.write('content：' + str(item[3]) + '\n')
+            fd.write('' + str(item[0]) + '\n')
+            fd.write('' + str(item[1]) + '\n')
+            fd.write('' + str(item[2]) + '\n')
+            fd.write('' + str(item[3]) + '\n')
     if fm == 'json':
         temp = ('agree', 'authod', 'star', 'content')
         for item in data:

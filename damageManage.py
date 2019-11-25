@@ -19,8 +19,8 @@ class Damage_Analyse():
     # 获取行名为0这一行的内容
     # 获取行为 2 列为2 的值，即格斗对一般的伤害
     abspath = sys.path[0]
-    path = abspath+"\\config\\battle.xls"
-    
+    path = abspath + "\\config\\battle.xls"
+
     def init_data(self):
         data = pd.DataFrame(pd.read_excel(self.path))
         return data
@@ -39,7 +39,7 @@ class Damage_Analyse():
         '水': '11',
         '草': '12',
         '电': '13',
-        '超能': '14',
+        '超能力': '14',
         '冰': '15',
         '龙': '16',
         '恶': '17',
@@ -58,7 +58,7 @@ class Damage_Analyse():
     # 输出值
     # print(data.loc[atkType - 1].values[enemyType])
 
-    def damage_result_display(self, damageTimes):            
+    def damage_result_display(self, damageTimes):
         if damageTimes == '0.0':
             print("没有效果")
         elif damageTimes == '0.5' or damageTimes == '0.25':
@@ -68,8 +68,8 @@ class Damage_Analyse():
         elif damageTimes == '2.0' or damageTimes == '4.0':
             print("效果拔群!")
         else:
-            pass            
-    
+            pass
+
     def damage_calc(self, arg1, arg2, arg3):
         # 计算实际伤害倍数 attr1 : 我方技能属性  敌方属性attr2, attr3
         damage_times_1 = self.base_damage(arg1, arg2)
@@ -88,13 +88,14 @@ class Damage_Analyse():
         damageTimes = float(data.loc[play_index - 1].values[enemy_index])
         print(attr1 + "对" + attr2 + "的伤害是" + str(damageTimes) + "倍")
         self.damage_result_display(damageTimes)
-        return damageTimes  
+        return damageTimes
 
     # 获取该属性的下标值
     def get_type_index(self, attr_name):
+
         return int(self.dict[attr_name])
 
 
 if __name__ == "__main__":
     da = Damage_Analyse()
-    da.damage_calc("格斗", "水", "一般")
+    da.damage_calc("超能力", "草", "毒")
