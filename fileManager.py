@@ -55,7 +55,7 @@ class FileManager():
 
 class IninConfig():
     abspath = sys.path[0]
-    path = abspath+"\\config\\pkmondex.csv"
+    path = abspath+"/config/pkmondex.csv"
     @classmethod
     def init_data(self):
         # header==None不把第一列作为属性，避免第一行不能用
