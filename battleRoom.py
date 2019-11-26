@@ -19,6 +19,7 @@ class BattleRoom():
         # 首先派出自己的精灵
         mypkmon = MyPkmon().get_my_pkmon()
         # 双方精灵加入战斗场景(写入文本文件)
-        battle_manger = {"PLAYER": wild_pkmon, "ENEMY": mypkmon}
+        battle_manger = {'PLAYER': mypkmon, 'ENEMY': wild_pkmon}
         print(battle_manger)
-        print(battle_manger["PLAYER"]["pkmon_type2"])
+        # 测试获取的等级
+        print(battle_manger['PLAYER']['pkmon_name'])
