@@ -19,10 +19,10 @@ class Damage_Analyse():
     # 获取行名为0这一行的内容
     # 获取行为 2 列为2 的值，即格斗对一般的伤害
     abspath = sys.path[0]
-    path = abspath + "\\config\\battle.xls"
+    path = abspath + "\\config\\battle.csv"
 
     def init_data(self):
-        data = pd.DataFrame(pd.read_csv(self.path))
+        data = pd.DataFrame(pd.read_csv(self.path, header=None))
         return data
 
     dict = {
