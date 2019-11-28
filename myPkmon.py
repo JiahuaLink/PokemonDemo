@@ -46,4 +46,3 @@ class MyPkmon():
             "speed_v": pkmon_raw[17]
         }
         return pkmon_dict
-        return mypkmon

@@ -22,7 +22,7 @@ class Damage_Analyse():
     path = abspath + "\\config\\battle.xls"
 
     def init_data(self):
-        data = pd.DataFrame(pd.read_excel(self.path))
+        data = pd.DataFrame(pd.read_csv(self.path))
         return data
 
     dict = {

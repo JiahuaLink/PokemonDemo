@@ -12,6 +12,7 @@
 import pandas as pd
 import csv
 import sys
+import json
 
 
 # here put the import lib
@@ -20,11 +21,24 @@ class FileManager():
     # 将数据保存到文件
     def save2file(self, file, data):
         # 打开文件
-        fd = open(file, 'a+', encoding='utf-8-sig', newline='') 
+        fd = open(file, 'a+', encoding='utf-8-sig', newline='')
         writer = csv.writer(fd)
         for item in data:
             writer.writerow(item)
         fd.close()
+
+    def open_battle_env(self):
+        file = open('batleinfo.txt', 'r')
+        js = file.read()
+        dic = json.loads(js)
+        file.close()
+        return dic
+
+    def save_battle_env(self, dic):
+        js = json.dumps(dic)
+        file = open('batleinfo.txt', 'w')
+        file.write(js)
+        file.close()
 
 
 class IninConfig():
@@ -32,6 +46,6 @@ class IninConfig():
     def get_data(self, file):
         abspath = sys.path[0]
         path = abspath + "\\config\\" + file
-        # header==None不把第一列作为属性，避免第一行不能用
-        data = pd.DataFrame(pd.read_csv(path, header=None))
+        # header==None 没有标题行
+        data = pd.DataFrame(pd.read_csv(path))
         return data

@@ -3,7 +3,7 @@
 '''
 @File    :   battleRoom.py
 @Time    :   2019/11/26 22:46:19
-@Author  :   Jawa 
+@Author  :   Jawa
 @Version :   1.0
 @Contact :   840132699@qq.com
 @Desc    :   None
@@ -11,6 +11,8 @@
 
 # here put the import lib
 from myPkmon import MyPkmon
+from fileManager import FileManager
+from battleProcess import BattleProcess
 
 
 class BattleRoom():
@@ -23,3 +25,10 @@ class BattleRoom():
         print(battle_manger)
         # 测试获取的等级
         print(battle_manger['PLAYER']['pkmon_name'])
+        self.join(battle_manger)
+
+    def join(self, battle_manger):
+        FileManager().save_battle_env(battle_manger)
+        data = FileManager().open_battle_env()
+        
+        BattleProcess().start(data)

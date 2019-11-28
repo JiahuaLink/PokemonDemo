@@ -33,36 +33,13 @@ class RanomPkmon():
         wild_pkmon = self.produce_pkmon(pkmon_raw)
         return wild_pkmon
 
-    def dict_to_pkmon(self, pkmon_raw):
-        pkmon_dict = {
-            "serialNum": pkmon_raw[0],
-            "level": pkmon_raw[1],
-            "pkmon_name": pkmon_raw[2],
-            "pkmon_type1": pkmon_raw[3],
-            "pkmon_type2": pkmon_raw[4],
-            "ability": pkmon_raw[5],
-            "hp_value": pkmon_raw[6],
-            "atk_value": pkmon_raw[7],
-            "defend_value": pkmon_raw[8],
-            "atk_sp_value": pkmon_raw[9],
-            "defend_sp_value": pkmon_raw[9],
-            "speed_value": pkmon_raw[11],
-            "hp_v": pkmon_raw[12],
-            "atk_v": pkmon_raw[13],
-            "defend_v": pkmon_raw[14],
-            "atk_sp_v": pkmon_raw[15],
-            "defend_sp_v": pkmon_raw[16],
-            "speed_v": pkmon_raw[17]
-        }
-        return pkmon_dict
-
     def produce_pkmon(self, pkmon_raw):
         select = selector.Selector()
         serialNum = pkmon_raw[0]
         pkmon_name = pkmon_raw[1]
         pkmon_type1 = pkmon_raw[2]
 
-        pkmon_type2 = (pkmon_raw[3] if pkmon_raw[3] != "NaN" else "")
+        pkmon_type2 = pkmon_raw[3] 
         try:
             np.isnan(pkmon_type2)
             pkmon_type2 = ""
@@ -91,7 +68,6 @@ class RanomPkmon():
         #            [atk_sp_v], [defend_sp_v], [speed_v])
         # FILE = 'randompkmon.csv'
         # fl.FileManager().save2file(FILE, data)
-
         wild_pkmon = {
             "serialNum": serialNum,
             "level": level,
@@ -118,7 +94,6 @@ class RanomPkmon():
 if __name__ == "__main__":
     rp = RanomPkmon()
     # 随机生成一只宝可梦,进入对战空间
-
     pokemon = rp.random_pkmon()
-    #print(pokemon)
+    # print(pokemon)
     BattleRoom().battlewith(pokemon)

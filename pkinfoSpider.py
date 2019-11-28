@@ -61,7 +61,7 @@ def parse4data(html):
 
     isStrength = pkdex_content.xpath(
         '//div[@class="tabbertab  tabbertabhide"]')
-    #是否区分世代
+    # 是否区分世代
     isExpGen = pkdex_content.xpath(
         '//table[contains(@class,"roundy a-r at-c")]//table[@class="roundy bgwhite fulltable"]//td[1]/span[contains(@original-title,"第五世代起")]/text()'
     )
@@ -122,7 +122,7 @@ def parse4data(html):
 
     # 基础经验值
     base_exp = pkdex_content.xpath(Gen_XPATH)
-    #print(type(base_exp))
+    # print(type(base_exp))
     # 体力值
 
     hp_value = pkdex_content.xpath(
@@ -251,7 +251,7 @@ def crawl():
         data = parse4data(pkmonHtml)
 
         save2file(fm, fd, data)
-    #time.sleep(random.random())
+    time.sleep(random.random())
 
     fd.close()
     print('结束爬取')
