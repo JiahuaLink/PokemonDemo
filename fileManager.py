@@ -13,7 +13,7 @@ import pandas as pd
 import csv
 import sys
 import json
-
+import os
 
 # here put the import lib
 class FileManager():
@@ -45,7 +45,7 @@ class IninConfig():
     @classmethod
     def get_data(self, file):
         abspath = sys.path[0]
-        path = abspath + "\\config\\" + file
+        path =os.path.join( abspath, 'config', file)
         # header==None 没有标题行
         data = pd.DataFrame(pd.read_csv(path))
         return data
