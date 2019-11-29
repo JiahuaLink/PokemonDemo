@@ -15,7 +15,6 @@ import sys
 import json
 import os
 
-
 # here put the import lib
 class FileManager():
     BATTLE_INFO = 'batleinfo.txt'
