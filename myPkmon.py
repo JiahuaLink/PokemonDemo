@@ -6,7 +6,7 @@
 @Author  :   Jawa 
 @Version :   1.0
 @Contact :   840132699@qq.com
-@Desc    :   自己的精灵
+@Desc    :   获取自己的精灵
 '''
 
 # here put the import lib

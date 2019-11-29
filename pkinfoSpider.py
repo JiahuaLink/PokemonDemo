@@ -6,7 +6,7 @@
 @Author  :   liajihua
 @Version :   1.0
 @Contact :   840132699@qq.com
-@Desc    :   None
+@Desc    :   爬取网页
 '''
 
 # here put the import lib

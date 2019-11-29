@@ -6,7 +6,7 @@
 @Author  :   Jawa
 @Version :   1.0
 @Contact :   840132699@qq.com
-@Desc    :   None
+@Desc    :   战功场景初始化
 '''
 
 # here put the import lib

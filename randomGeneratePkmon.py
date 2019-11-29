@@ -14,6 +14,7 @@ import random
 
 import fileManager as fl
 import statSelector as selector
+from generateMoves import GenerateMove
 import numpy as np
 from battleRoom import BattleRoom
 
@@ -35,11 +36,11 @@ class RanomPkmon():
 
     def produce_pkmon(self, pkmon_raw):
         select = selector.Selector()
-        serialNum = pkmon_raw[0]
+        serial_num = pkmon_raw[0]
         pkmon_name = pkmon_raw[1]
         pkmon_type1 = pkmon_raw[2]
 
-        pkmon_type2 = pkmon_raw[3] 
+        pkmon_type2 = pkmon_raw[3]
         try:
             np.isnan(pkmon_type2)
             pkmon_type2 = ""
@@ -54,22 +55,24 @@ class RanomPkmon():
         defend_value = select.stat_selector(pkmon_raw[10], level)
         defend_sp_value = select.stat_selector(pkmon_raw[11], level)
         speed_value = select.stat_selector(pkmon_raw[12], level)
+
+        # 选择技能
+        moves_dict = GenerateMove().random_moves()
         hp_v, atk_v, defend_v, atk_sp_v, defend_sp_v, speed_v = select.individual_selector(
         )
         print(
-            " 编号:%s\n 等级:lv.%s\n 名字:%s\n 属性:%s %s\n 特性:%s\n 能力值:\n 体力:%s\n 攻击:%s\n 防御:%s\n 特攻:%s\n 特防:%s\n 速度:%s\n 个体值:\n 攻击:%s\n 防御:%s\n 特攻:%s\n 特防:%s\n 防御:%s\n 速度:%s\n "
-            % (serialNum, level, pkmon_name, pkmon_type1, pkmon_type2, ability,
-               hp_value, atk_value, defend_value, atk_sp_value,
+            " 编号:%s\n 等级:lv.%s\n 名字:%s\n 属性:%s %s\n 特性:%s\n 能力值:\n 体力:%s\n 攻击:%s\n 防御:%s\n 特攻:%s\n 特防:%s\n 速度:%s\n 个体值:\n 攻击:%s\n 防御:%s\n 特攻:%s\n 特防:%s\n 防御:%s\n 速度:%s\n 技能:%s\n"
+            % (serial_num, level, pkmon_name, pkmon_type1, pkmon_type2,
+               ability, hp_value, atk_value, defend_value, atk_sp_value,
                defend_sp_value, speed_value, hp_v, atk_v, defend_v, atk_sp_v,
-               defend_sp_v, speed_v))
-        # data = zip([serialNum], [level], [pkmon_name], [pkmon_type1], [pkmon_type2],
-        #            [ability], [hp_value], [atk_value], [defend_value], [atk_sp_value],
-        #            [defend_sp_value], [speed_value], [hp_v], [atk_v], [defend_v],
-        #            [atk_sp_v], [defend_sp_v], [speed_v])
-        # FILE = 'randompkmon.csv'
-        # fl.FileManager().save2file(FILE, data)
+               defend_sp_v, speed_v, moves_dict))
+        data = zip([serial_num], [level], [pkmon_name], [pkmon_type1], [pkmon_type2],
+               [ability], [hp_value], [atk_value], [defend_value], [atk_sp_value],
+               [defend_sp_value], [speed_value], [hp_v], [atk_v], [defend_v], [atk_sp_v],
+               [defend_sp_v], [speed_v], [moves_dict])
+        fl.FileManager().save2randompkmon(data)
         wild_pkmon = {
-            "serialNum": serialNum,
+            "serial_num": serial_num,
             "level": level,
             "pkmon_name": pkmon_name,
             "pkmon_type1": pkmon_type1,
@@ -86,7 +89,8 @@ class RanomPkmon():
             "defend_v": defend_v,
             "atk_sp_v": atk_sp_v,
             "defend_sp_v": defend_sp_v,
-            "speed_v": speed_v
+            "speed_v": speed_v,
+            "moves": moves_dict
         }
         return wild_pkmon
 

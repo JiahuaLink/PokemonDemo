@@ -6,17 +6,17 @@
 @Author  :   Jawa 
 @Version :   1.0
 @Contact :   840132699@qq.com
-@Desc    :   None
+@Desc    :   玩家控制
 '''
 
 # here put the import lib
-
+from battleEvent import BattleEvent
 
 class PlayerControls():
-    def playcontrols(self, choose):
+    def playcontrols(self, choose, data):
         if choose == 1:
             print("攻击")
-            
+            BattleEvent().atk_event(data)
         elif choose == 2:
             print("背包")
         elif choose == 3:

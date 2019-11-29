@@ -6,7 +6,7 @@
 @Author  :   Jawa
 @Version :   1.0
 @Contact :   840132699@qq.com
-@Desc    :   None
+@Desc    :   战斗进程实现
 '''
 
 # here put the import lib
@@ -25,7 +25,7 @@ class BattleProcess():
         self.lockPlayer.acquire()
         choose = int(input())
         print(choose)
-        PlayerControls().playcontrols(choose)
+        PlayerControls().playcontrols(choose, data)
         self.lockEnemy.release()
         time.sleep(0.1)
         self.player_rounds(data)
