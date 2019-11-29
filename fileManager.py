@@ -46,7 +46,7 @@ class FileManager():
         file.close()
 
     def save2randompkmon(self, dic):
-        fd = open(self.RANDOMPKMON_CSV, 'w', encoding='utf-8-sig', newline='')
+        fd = open(self.RANDOMPKMON_CSV, 'a+', encoding='utf-8-sig', newline='')
 
         writer = csv.writer(fd)
         for item in dic:

@@ -11,7 +11,7 @@
 
 # here put the import lib
 import fileManager as fl
-
+from generateMoves import GenerateMove
 
 class MyPkmon():
 
@@ -25,6 +25,7 @@ class MyPkmon():
         return mypkmon
 
     def dict_to_pkmon(self, pkmon_raw):
+        moves_dict = GenerateMove().random_moves()
         pkmon_dict = {
             "serialNum": pkmon_raw[0],
             "level": pkmon_raw[1],
@@ -43,6 +44,7 @@ class MyPkmon():
             "defend_v": pkmon_raw[14],
             "atk_sp_v": pkmon_raw[15],
             "defend_sp_v": pkmon_raw[16],
-            "speed_v": pkmon_raw[17]
+            "speed_v": pkmon_raw[17],
+            "moves":moves_dict
         }
         return pkmon_dict

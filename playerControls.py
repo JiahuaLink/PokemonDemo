@@ -13,9 +13,10 @@
 from battleEvent import BattleEvent
 
 class PlayerControls():
+    
     def playcontrols(self, choose, data):
         if choose == 1:
-            print("攻击")
+            print("%s选择了攻击" % data["player"]["pkmon_name"])
             BattleEvent().atk_event(data)
         elif choose == 2:
             print("背包")

@@ -8,14 +8,21 @@
 @Contact :   840132699@qq.com
 @Desc    :   处理战斗事件
 '''
-from MoveSelector import MoveSelect
+from moveSelector import MoveSelect
 
 
 # here put the import lib
 class BattleEvent(object):
     def atk_event(self, data):
-        print("选择技能")
-        choose = input()
+        moves = data["player"]["moves"]
+        movesinfo1 = moves["move1"]
+        movesinfo2 = moves["move2"]
+        movesinfo3 = moves["move3"]
+        movesinfo4 = moves["move4"] 
+
+        print(movesinfo1["move_name"], movesinfo2["move_name"], movesinfo3["move_name"], movesinfo4["move_name"])
+        print("选择技能:")
+        choose = int(input())
         MoveSelect().select(choose, data)
 
     def run_event(self):

@@ -20,21 +20,21 @@ class BattleProcess():
     lockEnemy = threading.Lock()
 
     def player_rounds(self, data):
-        if data["PLAYER"]["hp_value"] == 0:
+        if data["player"]["hp_value"] == 0:
             return
         self.lockPlayer.acquire()
+        print("%s要做什么？\n【攻击】【背包】【精灵】【逃跑】\n" % data["player"]["pkmon_name"])
         choose = int(input())
-        print(choose)
         PlayerControls().playcontrols(choose, data)
         self.lockEnemy.release()
         time.sleep(0.1)
         self.player_rounds(data)
 
     def enemy_rounds(self, data):
-        if data["ENEMY"]["hp_value"] == 0:
+        if data["enemy"]["hp_value"] == 0:
             return
         self.lockEnemy.acquire()
-        print(" ENEMY DO")
+        print("%s发起了攻击" % data["enemy"]["pkmon_name"])
         self.lockPlayer.release()
         time.sleep(0.1)
         self.enemy_rounds(data)

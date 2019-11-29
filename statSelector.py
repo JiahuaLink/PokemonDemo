@@ -30,7 +30,7 @@ class Selector():
     def lv_selector(self):
         level = random.randint(self.MIN_LEVEL, self.MAX_LEVEL)
         # 等级为
-        print("等级为%s" % level)
+        # print("等级为%s" % level)
         return level
 
     # 随机选择特性
@@ -45,13 +45,13 @@ class Selector():
             rate = [0.5, 0.45, 0.05]
         if arr[randomNum.RandomNum().random_index(arr, rate)] == 0:
             ability = ab1
-            print("草丛中冒出了一只普通特性1:%s" % ability)
+            # print("草丛中冒出了一只普通特性1:%s" % ability)
         if arr[randomNum.RandomNum().random_index(arr, rate)] == 1:
             ability = ab2
-            print("草丛中冒出了一只普通特性2:%s" % ability)
+            # print("草丛中冒出了一只普通特性2:%s" % ability)
         if arr[randomNum.RandomNum().random_index(arr, rate)] == 2:
             ability = ab3
-            print("草丛中冒出了一只隐藏特性:%s" % ability)
+            # print("草丛中冒出了一只隐藏特性:%s" % ability)
 
         return ability
 
