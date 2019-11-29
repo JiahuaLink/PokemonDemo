@@ -28,12 +28,9 @@ class GenerateMove():
         # 循环生成4个技能
         moves = {}
         for num in range(1, 5):
-
             # 获取技能编号
             move_num = random.randint(0, maxnum)
-            #
             # 随机取出一行数据(随机获取一个技能)
-
             move_raw = data.loc[0:maxnum].values[move_num]
             move = self.produce_move(move_raw, num)
             
@@ -46,7 +43,6 @@ class GenerateMove():
     def produce_move(self, move_raw, num):
         # 编号
         move_num = move_raw[0]
-        
         # 名称
         move_name = move_raw[1]
         # 属性类型
