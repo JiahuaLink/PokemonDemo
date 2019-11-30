@@ -8,7 +8,7 @@
 @Contact :   840132699@qq.com
 @Desc    :   处理战斗事件
 '''
-from moveSelector import MoveSelect
+from moveSelect import MoveSelect
 
 
 # here put the import lib

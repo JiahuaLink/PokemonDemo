@@ -12,7 +12,7 @@
 '''
 
 # here put the import lib
-import fileManager as fl
+from fileManager import InitConfig
 import random
 
 
@@ -23,7 +23,7 @@ class GenerateMove():
     def random_moves(self):
         # print(random.randint(0,9))
         # 随机生成的技能编号不超过最大值
-        data = fl.IninConfig().get_data(self.MOVE_FILE)
+        data = InitConfig().get_data(self.MOVE_FILE)
         maxnum = data.shape[0] - 1
         # 循环生成4个技能
         moves = {}

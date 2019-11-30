@@ -10,7 +10,7 @@
 '''
 
 # here put the import lib
-from myPkmon import MyPkmon
+from myPokemon import MyPkmon
 from fileManager import FileManager
 from battleProcess import BattleProcess
 

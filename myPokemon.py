@@ -10,16 +10,17 @@
 '''
 
 # here put the import lib
-import fileManager as fl
+from fileManager import InitConfig
 from generateMoves import GenerateMove
 import numpy as np
+
 
 class MyPkmon():
 
     MY_POKEMON_FILE = 'mypkmon.csv'
 
     def get_my_pkmon(self):
-        data = fl.IninConfig().get_data(self.MY_POKEMON_FILE)
+        data = InitConfig().get_data(self.MY_POKEMON_FILE)
         # 随机取出一行数据(取队列第一只精灵)
         pkmon_raw = data.loc[0:5].values[0]
         mypkmon = self.dict_to_pkmon(pkmon_raw)

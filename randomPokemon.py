@@ -12,8 +12,8 @@
 # here put the import lib
 import random
 
-import fileManager as fl
-import statSelector as selector
+from fileManager import InitConfig, FileManager
+import randomStats as selector
 from generateMoves import GenerateMove
 import numpy as np
 from battleRoom import BattleRoom
@@ -25,7 +25,7 @@ class RanomPkmon():
     def random_pkmon(self):
         # print(random.randint(0,9))
         # 随机生成的精灵编号不超过最大值
-        data = fl.IninConfig().get_data(self.PKMONDEX_FILE)
+        data = InitConfig().get_data(self.PKMONDEX_FILE)
         maxnum = data.shape[0] - 1
         pkmon_num = random.randint(0, maxnum)
         # print(maxnum, pkmon_num)
@@ -75,7 +75,7 @@ class RanomPkmon():
                    [defend_value], [atk_sp_value], [defend_sp_value],
                    [speed_value], [hp_v], [atk_v], [defend_v], [atk_sp_v],
                    [defend_sp_v], [speed_v], [moves_dict])
-        fl.FileManager().save2randompkmon(data)
+        FileManager().save2randompkmon(data)
         wild_pkmon = {
             "serial_num": serial_num,
             "level": level,
@@ -103,7 +103,6 @@ class RanomPkmon():
 if __name__ == "__main__":
     rp = RanomPkmon()
     # 随机生成一只宝可梦,进入对战空间
-    for _ in range(150):
-        pokemon = rp.random_pkmon()
+    pokemon = rp.random_pkmon()
     # print(pokemon)
     BattleRoom().battlewith(pokemon)

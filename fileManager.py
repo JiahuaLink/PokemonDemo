@@ -54,7 +54,7 @@ class FileManager():
         fd.close()
 
 
-class IninConfig():
+class InitConfig():
     @classmethod
     def get_data(self, file):
         abspath = sys.path[0]
