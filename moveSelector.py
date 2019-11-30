@@ -3,7 +3,7 @@
 '''
 @File    :   MovesSelector.py
 @Time    :   2019/11/29 21:42:19
-@Author  :   Jawa 
+@Author  :   Jawa
 @Version :   1.0
 @Contact :   840132699@qq.com
 @Desc    :   技能选择
@@ -29,6 +29,7 @@ class MoveSelect():
         pkmon_name = data["player"]["pkmon_name"]
         moves = data["player"]["moves"]
         moveinfo = moves[move]
-        print("%s使出了%s" % (pkmon_name, moveinfo["move_name"]))
+        print("%s使出了%s" % (pkmon_name, moveinfo["name"]))
         FileManager().save_battle_env(data)
         pass
+    

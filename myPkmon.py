@@ -12,6 +12,7 @@
 # here put the import lib
 import fileManager as fl
 from generateMoves import GenerateMove
+import numpy as np
 
 class MyPkmon():
 
@@ -26,6 +27,11 @@ class MyPkmon():
 
     def dict_to_pkmon(self, pkmon_raw):
         moves_dict = GenerateMove().random_moves()
+        try:
+            np.isnan(pkmon_raw[4])
+            pkmon_raw[4] = ""
+        except Exception:
+            pass
         pkmon_dict = {
             "serialNum": pkmon_raw[0],
             "level": pkmon_raw[1],
@@ -45,6 +51,6 @@ class MyPkmon():
             "atk_sp_v": pkmon_raw[15],
             "defend_sp_v": pkmon_raw[16],
             "speed_v": pkmon_raw[17],
-            "moves":moves_dict
+            "moves": moves_dict
         }
         return pkmon_dict

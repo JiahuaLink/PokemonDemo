@@ -20,7 +20,7 @@ class BattleEvent(object):
         movesinfo3 = moves["move3"]
         movesinfo4 = moves["move4"] 
 
-        print(movesinfo1["move_name"], movesinfo2["move_name"], movesinfo3["move_name"], movesinfo4["move_name"])
+        print(movesinfo1["name"], movesinfo2["name"], movesinfo3["name"], movesinfo4["name"])
         print("选择技能:")
         choose = int(input())
         MoveSelect().select(choose, data)

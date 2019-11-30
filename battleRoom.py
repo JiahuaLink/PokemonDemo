@@ -22,7 +22,7 @@ class BattleRoom():
         mypkmon = MyPkmon().get_my_pkmon()
         # 双方精灵加入战斗场景(写入文本文件)
         battle_manger = {'player': mypkmon, 'enemy': wild_pkmon}
-        #print(battle_manger)
+        # print(battle_manger)
         # 测试获取的等级
         print("该你上场了，去吧，%s!\n" % battle_manger['player']['pkmon_name'])
         self.join(battle_manger)
@@ -30,5 +30,5 @@ class BattleRoom():
     def join(self, battle_manger):
         FileManager().save_battle_env(battle_manger)
         data = FileManager().open_battle_env()
-        
         BattleProcess().start(data)
+        

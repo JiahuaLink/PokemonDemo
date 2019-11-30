@@ -3,7 +3,7 @@
 '''
 @File    :   generateMoves.py
 @Time    :   2019/11/29 22:25:51
-@Author  :   Jawa 
+@Author  :   Jawa
 @Version :   1.0
 @Contact :   840132699@qq.com
 @Desc    :   技能列表生成，
@@ -57,19 +57,19 @@ class GenerateMove():
         move_pp = move_raw[7]
 
         # 选择技能
-        #print("技能%d:%s" % (num, move_name))
+        # print("技能%d:%s" % (num, move_name))
 
         # print(" 编号:%s\n名称:%s\n 属性类型:%s\n 分类:%s\n 伤害:%s\n 命中率:\n 技能点数:%s\n" %
         #       (move_num, move_name, move_type, move_power, move_category,
         #        move_accuracy, move_pp))
         move = {
-            "move_num": move_num,
-            "move_name": move_name,
-            "move_type": move_type,
-            "move_power": move_power,
-            "move_category": move_category,
-            "move_accuracy": move_accuracy,
-            "move_pp": move_pp
+            "id": move_num,
+            "name": move_name,
+            "type": move_type,
+            "power": move_power,
+            "category": move_category,
+            "accuracy": move_accuracy,
+            "pp": move_pp
         }
 
         return move

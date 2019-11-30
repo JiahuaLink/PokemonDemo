@@ -121,7 +121,7 @@ def parse4data(html):
     print(hidden_ability)
 
     # 基础经验值
-    base_exp = pkdex_content.xpath(Gen_XPATH)
+    #base_exp = pkdex_content.xpath(Gen_XPATH)
     # print(type(base_exp))
     # 体力值
 

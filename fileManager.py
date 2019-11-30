@@ -15,9 +15,9 @@ import sys
 import json
 import os
 
-# here put the import lib
+
 class FileManager():
-    BATTLE_INFO = 'batleinfo.txt'
+    BATTLE_INFO = 'battleinfo.json'
     RANDOMPKMON = "randompkmon.csv"
     abspath = sys.path[0]
     BATTLE_FILE = os.path.join(abspath, 'config', BATTLE_INFO) 
@@ -33,7 +33,7 @@ class FileManager():
         fd.close()
 
     def open_battle_env(self):
-        file = open(self.BATTLE_FILE, 'r')
+        file = open(self.BATTLE_FILE, 'r', encoding='utf-8-sig')
         js = file.read()
         dic = json.loads(js)
         file.close()
@@ -41,7 +41,7 @@ class FileManager():
 
     def save_battle_env(self, dic):
         js = json.dumps(dic, ensure_ascii=False)
-        file = open(self.BATTLE_FILE, 'w')
+        file = open(self.BATTLE_FILE, 'w', encoding='utf-8-sig')
         file.write(js)
         file.close()
 

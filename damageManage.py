@@ -11,20 +11,14 @@
 
 # here put the import lib
 
-import pandas as pd
-import sys
+
+from fileManager import IninConfig
 
 
 class Damage_Analyse():
     # 获取行名为0这一行的内容
     # 获取行为 2 列为2 的值，即格斗对一般的伤害
-    abspath = sys.path[0]
-    path = abspath + "\\config\\battle.csv"
-
-    def init_data(self):
-        data = pd.DataFrame(pd.read_csv(self.path, header=None))
-        return data
-
+    POKEMON_TYPE = 'battletype.csv'
     dict = {
         '一般': '1',
         '格斗': '2',
@@ -80,7 +74,7 @@ class Damage_Analyse():
 
     def base_damage(self, attr1, attr2):
         # 传入属性名称  输出基本伤害倍数
-        data = self.init_data()
+        data = IninConfig().get_data(self.POKEMON_TYPE)
         play_index = self.get_type_index(attr1)
         enemy_index = self.get_type_index(attr2)
         # atkType = str(data.loc[play_index - 1].values[0])
