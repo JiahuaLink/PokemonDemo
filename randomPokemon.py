@@ -11,12 +11,11 @@
 
 # here put the import lib
 import random
-
 from fileManager import InitConfig, FileManager
 import randomStats as selector
 from generateMoves import GenerateMove
 import numpy as np
-from battleRoom import BattleRoom
+
 
 
 class RanomPkmon():
@@ -98,11 +97,3 @@ class RanomPkmon():
             "moves": moves_dict
         }
         return wild_pkmon
-
-
-if __name__ == "__main__":
-    rp = RanomPkmon()
-    # 随机生成一只宝可梦,进入对战空间
-    pokemon = rp.random_pkmon()
-    # print(pokemon)
-    BattleRoom().battlewith(pokemon)
