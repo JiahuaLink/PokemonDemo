@@ -12,7 +12,7 @@
 # here put the import lib
 
 
-from fileManager import IninConfig
+from fileManager import InitConfig
 
 
 class Damage_Analyse():
@@ -39,42 +39,9 @@ class Damage_Analyse():
         '恶': '17',
         '妖精': '18'
     }
-
-    # a = '水'
-    # b = '火'
-
-    # atkType = int(dict[a])
-    # enemyType = int(dict[b])
-    # 第几行  作为攻击方
-    # print(data.loc[atkType - 1].values[0])
-    # 第几列  被攻击方
-    # print(data.columns[enemyType])
-    # 输出值
-    # print(data.loc[atkType - 1].values[enemyType])
-
-    def damage_result_display(self, damageTimes):
-        if damageTimes == '0.0':
-            print("没有效果")
-        elif damageTimes == '0.5' or damageTimes == '0.25':
-            print("效果很小..")
-        elif damageTimes == '1.0':
-            print("效果一般")
-        elif damageTimes == '2.0' or damageTimes == '4.0':
-            print("效果拔群!")
-        else:
-            pass
-
-    def damage_calc(self, arg1, arg2, arg3):
-        # 计算实际伤害倍数 attr1 : 我方技能属性  敌方属性attr2, attr3
-        damage_times_1 = self.base_damage(arg1, arg2)
-        damage_times_2 = self.base_damage(arg1, arg3)
-        damageTimes = float(damage_times_1) * float(damage_times_2)
-        print("总伤害是%s倍" % damageTimes)
-        self.damage_result_display(str(damageTimes))
-
     def base_damage(self, attr1, attr2):
         # 传入属性名称  输出基本伤害倍数
-        data = IninConfig().get_data(self.POKEMON_TYPE)
+        data = InitConfig().get_data(self.POKEMON_TYPE)
         play_index = self.get_type_index(attr1)
         enemy_index = self.get_type_index(attr2)
         # atkType = str(data.loc[play_index - 1].values[0])
@@ -85,11 +52,34 @@ class Damage_Analyse():
         return damageTimes
 
     # 获取该属性的下标值
-    def get_type_index(self, attr_name):
-
+    def get_type_index(self, attr_name):  
         return int(self.dict[attr_name])
+    
+    def damage_result_display(self, damageTimes):
+        if damageTimes == '0.0':
+            print("没有效果")
+        elif damageTimes == '0.5' or damageTimes == '0.25':
+            print("效果很小..")
+        elif damageTimes == '1.0':
+            print("效果一般")
+        elif damageTimes == '2.0' or damageTimes == '4.0':
+            print("效果绝佳!")
+        else:
+            pass
 
-
-if __name__ == "__main__":
-    da = Damage_Analyse()
-    da.damage_calc("超能力", "草", "毒")
+    def damage_calc(self, arg1, arg2, arg3):
+        # 计算实际伤害倍数 attr1 : 我方技能属性  敌方属性attr2, attr3
+        damage_times_1 = 1
+        damage_times_2 = 1
+        damage_times_1 = self.base_damage(arg1, arg2)
+        if arg3 == '':
+            damage_times_2 = 1
+        else:
+            damage_times_2 = self.base_damage(arg1, arg3)
+        damageTimes = float(damage_times_1) * float(damage_times_2)
+        print("总伤害是%s倍" % damageTimes)
+        self.damage_result_display(str(damageTimes))
+        return damageTimes
+# if __name__ == "__main__":
+#     da = Damage_Analyse()
+#     da.damage_calc("超能力", "草", "毒")

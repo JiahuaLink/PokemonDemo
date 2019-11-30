@@ -17,7 +17,6 @@ from generateMoves import GenerateMove
 import numpy as np
 
 
-
 class RanomPkmon():
     PKMONDEX_FILE = "pkmondex.csv"
 

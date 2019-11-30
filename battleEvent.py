@@ -8,7 +8,7 @@
 @Contact :   840132699@qq.com
 @Desc    :   处理战斗事件
 '''
-from moveSelect import MoveSelect
+from moveManager import MoveManager
 
 
 # here put the import lib
@@ -19,11 +19,10 @@ class BattleEvent(object):
         movesinfo2 = moves["move2"]
         movesinfo3 = moves["move3"]
         movesinfo4 = moves["move4"] 
-
         print(movesinfo1["name"], movesinfo2["name"], movesinfo3["name"], movesinfo4["name"])
         print("选择技能:")
         choose = int(input())
-        MoveSelect().select(choose, data)
+        MoveManager().select(choose, data)
 
     def run_event(self):
 

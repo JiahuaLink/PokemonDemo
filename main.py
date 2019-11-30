@@ -18,3 +18,4 @@ if __name__ == "__main__":
     pokemon = rp.random_pkmon()
     # print(pokemon)
     BattleRoom().battlewith(pokemon)
+
