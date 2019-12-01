@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   statSelector.py
+@File    :   randomStats.py
 @Time    :   2019/11/25 21:57:08
 @Author  :   Jawa
 @Version :   1.0

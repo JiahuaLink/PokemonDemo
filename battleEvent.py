@@ -13,6 +13,7 @@ from moveManager import MoveManager
 
 # here put the import lib
 class BattleEvent(object):
+    # 选择攻击
     def atk_event(self, data):
         moves = data["player"]["moves"]
         movesinfo1 = moves["move1"]
@@ -23,7 +24,7 @@ class BattleEvent(object):
         print("选择技能:")
         choose = int(input())
         MoveManager().select(choose, data)
-
+    # 选择逃跑
     def run_event(self):
 
         pass
