@@ -9,17 +9,16 @@
 @Desc    :   战功场景初始化
 '''
 
-# here put the import lib
-from myPokemon import MyPkmon
+# here put the import libn
 from fileManager import FileManager
 from battleProcess import BattleProcess
 
 
 class BattleRoom():
     # 与精灵战斗
-    def battlewith(self, wild_pkmon):
+    def battlewith(self, mypkmon, wild_pkmon):
         # 首先派出自己的精灵
-        mypkmon = MyPkmon().get_my_pkmon()
+        
         # 双方精灵加入战斗场景(写入文本文件)
         battle_manger = {'player': mypkmon, 'enemy': wild_pkmon}
         # print(battle_manger)
