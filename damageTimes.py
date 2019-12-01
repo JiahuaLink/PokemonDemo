@@ -15,7 +15,7 @@
 from fileManager import InitConfig
 
 
-class Damage_Analyse():
+class DamageAnalyse():
     # 获取行名为0这一行的内容
     # 获取行为 2 列为2 的值，即格斗对一般的伤害
     POKEMON_TYPE = 'battletype.csv'
@@ -81,5 +81,5 @@ class Damage_Analyse():
         self.damage_result_display(str(damageTimes))
         return damageTimes
 # if __name__ == "__main__":
-#     da = Damage_Analyse()
+#     da = DamageAnalyse()
 #     da.damage_calc("超能力", "草", "毒")

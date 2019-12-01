@@ -10,7 +10,7 @@
             
 '''
 from fileManager import FileManager
-from damageTimes import Damage_Analyse
+from damageTimes import DamageAnalyse
 from randomNum import RandomNum
 
 
@@ -87,7 +87,7 @@ class MoveManager():
         base_damage = self.calc_base_damage(level, move_power, atk, defend)
         bonuses_damage = self.calc_type_bonuses(move_type, own_type1,
                                                 own_type2, base_damage)
-        times = Damage_Analyse().damage_calc(move_type, enemy_type1,
+        times = DamageAnalyse().damage_calc(move_type, enemy_type1,
                                              enemy_type2)
         times_damage = bonuses_damage * times
         damages = self.random_correction_damage(times_damage)
