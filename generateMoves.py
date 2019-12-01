@@ -33,7 +33,6 @@ class GenerateMove():
             # 随机取出一行数据(随机获取一个技能)
             move_raw = data.loc[0:maxnum].values[move_num]
             move = self.produce_move(move_raw, num)
-            
         # 四个技能存入技能字典
             move_no = "move" + str(num)
             moves[move_no] = move

@@ -11,7 +11,6 @@
 '''
 from fileManager import FileManager
 from damageCalculator import Damages
-from statisticCalculator import Statistic
 
 
 class MoveManager():

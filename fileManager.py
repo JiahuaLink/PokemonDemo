@@ -20,7 +20,7 @@ class FileManager():
     BATTLE_INFO = 'battleinfo.json'
     RANDOMPKMON = "randompkmon.csv"
     abspath = sys.path[0]
-    BATTLE_FILE = os.path.join(abspath, 'config', BATTLE_INFO) 
+    BATTLE_FILE = os.path.join(abspath, 'config', BATTLE_INFO)
     RANDOMPKMON_CSV = os.path.join(abspath, 'config', RANDOMPKMON)
 
     # 将数据保存到文件

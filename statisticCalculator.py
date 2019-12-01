@@ -55,7 +55,6 @@ class Statistic():
     }
     
     def atk_level_calc(self):
-
         pass
 
     def defend_level_calc(self):
@@ -81,7 +80,6 @@ class Statistic():
     def avoid_level_calc(self):
 
         pass
-    
     
     def stats_change_display(self):
         '''
