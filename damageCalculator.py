@@ -102,11 +102,25 @@ class Damages():
          '''
 
         move_type = moveinfo["type"]
-        move_power = int(moveinfo["power"])
+        move_power = 0
+        move_accuracy = 100
+        move_pp = 1000000
+        if moveinfo["power"] == '变化':
+            move_power=0
+        elif moveinfo["power"] == '—':
+            move_power=0
+        else:
+            move_power = int(moveinfo["power"])
         move_category = moveinfo["category"]
-        move_accuracy = int(moveinfo["accuracy"])
-        move_pp = int(moveinfo["pp"])
 
+        if moveinfo["accuracy"] == '—':
+            move_accuracy=100
+        else:
+            move_accuracy = int(moveinfo["accuracy"])
+        if moveinfo["pp"] == '—': 
+            move_pp = int(moveinfo["pp"])
+        else:
+            move_pp = int(moveinfo["pp"])
         our_level = int(data["player"]["level"])
         own_type1 = data["player"]["pkmon_type1"]
         own_type2 = data["player"]["pkmon_type2"]
@@ -136,7 +150,10 @@ class Damages():
         times = DamagesTimes().times_calc(move_type, enemy_type1, enemy_type2)
         times_damage = bonuses_damage * times
         damages = self.random_correction_damage(times_damage)
-        data["enemy"]["hp_value"] -= damages
+        if data["enemy"]["hp_value"] <=0:
+           data["enemy"]["hp_value"] = 0 
+        else:
+            data["enemy"]["hp_value"]-= damages
         print("%s受到%d点伤害" % (enmey_name, damages))
         return data
 
@@ -199,12 +216,12 @@ class Damages():
         伤害＝⌊伤害×R÷255⌋
         '''
         r_value = RandomNum().random_num(self.RANDOM_CORRECTION_VALUE)
-        print("随机修正值%d\n" % r_value)
+        print("随机修正值%d" % r_value)
         while r_value < 127:
             r_value = RandomNum().random_num(self.RANDOM_CORRECTION_VALUE)
         damage = (damage * r_value / 255)
         print("修正后随机修正值为:%d\n伤害值为%d\n" % (r_value, damage))
-        return damage
+        return int(damage)
 
 # if __name__ == "__main__":
 #     da = DamageAnalyse()

@@ -37,7 +37,7 @@ class Statistic():
         5: 350,
         6: 400,
     }   
-    # 命中等级能力变化
+    # 命中闪避等级能力变化
     accuracy_level = {
         -6: 25,
         -5: 28,
@@ -54,7 +54,9 @@ class Statistic():
         6: 400,
     }
     
+    
     def atk_level_calc(self):
+        
         pass
 
     def defend_level_calc(self):
@@ -73,9 +75,9 @@ class Statistic():
 
         pass
 
-    def accuracy_calc(self):
-
-        pass
+    def accuracy_level_calc(self,accuracy,level):
+        return int(accuracy)*(self.accuracy_level[level])/100
+        
 
     def avoid_level_calc(self):
 

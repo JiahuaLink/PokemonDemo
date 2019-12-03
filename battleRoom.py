@@ -24,10 +24,12 @@ class BattleRoom():
         # print(battle_manger)
         # 测试获取的等级
         print("该你上场了，去吧，%s!\n" % battle_manger['player']['pkmon_name'])
-        self.join(battle_manger)
-
-    def join(self, battle_manger):
+        
         FileManager().save_battle_env(battle_manger)
-        data = FileManager().open_battle_env()
-        BattleProcess().start(data)
+        BattleProcess().start(battle_manger)
+
+
+        
+        
+        
         

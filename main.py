@@ -39,5 +39,6 @@ if __name__ == "__main__":
     pokemon = RanomPkmon().random_pkmon()
     mypkmon = MyPkmon().get_my_pkmon()
     # print(pokemon)
-    #BattleRoom().battlewith(mypkmon, pokemon)
-    app.run(host="127.0.0.1", port=8000, debug=True)
+    BattleRoom().battlewith(mypkmon, pokemon)
+    #app.run(host="127.0.0.1", port=8000, debug=True)
+    
