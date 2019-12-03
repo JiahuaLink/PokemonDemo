@@ -1,77 +1,111 @@
-
 <!DOCTYPE HTML>
 <html>
-<head>
-<title>随机野生宝可梦</title>
-<!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<meta name="keywords" content="野生宝可梦" />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js')}}"></script>
-<!-- Custom Theme files -->
-<link href="{{ url_for('static', filename='css/style.css')}}" rel='stylesheet' type='text/css' />
-<script type="text/javascript" src="{{ url_for('static', filename='js/Chart.js')}}"></script> 
-<!-- Google Fonts -->
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
-<!---tage-script---->
-<!-- start price_bar  -->	
-<link href="{{ url_for('static', filename='css/jquery.nouislider.css')}}" rel="stylesheet">
-<script src="{{ url_for('static', filename='js/jquery.nouislider.js')}}"></script>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fd-slider.css')}}">
 
-  		<!----End Calender -------->
+<head>
+  <title>随机野生宝可梦</title>
+  <!-- Custom Theme files -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script
+    type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <meta name="keywords" content="野生宝可梦" />
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js')}}"></script>
+  <!-- Custom Theme files -->
+  <link href="{{ url_for('static', filename='css/style.css')}}" rel='stylesheet' type='text/css' />
+  <script type="text/javascript" src="{{ url_for('static', filename='js/Chart.js')}}"></script>
+  <!-- Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+  <!---tage-script---->
+  <!-- start price_bar  -->
+  <link href="{{ url_for('static', filename='css/jquery.nouislider.css')}}" rel="stylesheet">
+  <script src="{{ url_for('static', filename='js/jquery.nouislider.js')}}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fd-slider.css')}}">
+
+  <!----End Calender -------->
 </head>
+
 <body>
-<div class="wrap">
-  <div class="top_grid">
-	<!-- menus starts here -->
-	<!-- Search bar  -->
-	<!-- Twitter Widget 1 -->
-	<div class="twitter_widget_1">
-		<div class="twit_1_banner">
-			<div class="twit_1_img"><a href="#"><img src="{{ url_for('static', filename=filename)}}" width="125px" height="auto" alt="该宝可梦没有图哦～～"/></a></div>
+  <div class="wrap">
+    <div class="top_grid">
+      <!-- menus starts here -->
+      <!-- Search bar  -->
+      <!-- Twitter Widget 1 -->
+      <div class="twitter_widget_1">
+        <div class="twit_1_banner">
+          <div class="twit_1_img"><a href="#"><img src="{{ url_for('static', filename=filename)}}" width="auto"
+                height="150" alt="该宝可梦没有图哦～～" /></a></div>
         </div>
         <div class="latest_tweets">
-                <h3>Lv.{{level}}  {{pkmon_name}}</h3>
-            </div>
-            <div class="big-buttons-col2">
-                    <ul>
-                        <li><input class="blue blue1" type="button" value="{{pkmon_type1}}   {{pkmon_type2}}"></li>
-                        <li><input class="blue green green1" type="button" value="{{ability}}"></li>
+          <h3>Lv.{{pokemon.level}} {{pokemon.pkmon_name}}</h3>
+        </div>
 
-                    </ul>
-                  </div>            
+        <div class="skills">
+          <div style="width:65%">
+            <p> </p>
+            <div class="clear"> </div>
+          </div>
+        </div>
 
-		<ul class="twit_nav">
-			<li><a href="#" class="twit_2"><p><span>体力</span><br>{{hp_value}}</p></a></li>
-			<li><a href="#" class="twit_1"><p><span>攻击</span><br>{{atk_value}}</p></a></li>
+        <div class="big-buttons-col2">
+          <ul>
+            <li><input class="tag6" type="button" value="{{pokemon.pkmon_type1}}   {{pokemon.pkmon_type2}}"></li>
+            <li><input class="tag5" type="button" value="{{pokemon.ability}}"></li>
 
-            <li><a href="#" class="twit_1"><p><span>特攻</span><br>{{atk_sp_value}}</p></a></li>
-            <li><a href="#" class="twit_3"><p><span>防御</span><br>{{defend_value}}</p></a></li>
-			<li><a href="#" class="twit_3"><p><span>特防<span><br>{{defend_sp_value}}</p></a></li>
-			<li><a href="#" class="twit_3"><p><span>速度</span><br>{{speed_value}}</p></a></li>
-			
-		</ul>
+          </ul>
+        </div>
+        <div class="latest_tweets">
+          <h3></h3>
+        </div>
+
+        <ul class="twit_nav">
+          <li><a href="#" class="twit_2">
+              <p><span>体力</span><br>{{pokemon.hp_value}}</p>
+            </a></li>
+          <li><a href="#" class="twit_1">
+              <p><span>攻击</span><br>{{pokemon.atk_value}}</p>
+            </a></li>
+
+          <li><a href="#" class="twit_1">
+              <p><span>特攻</span><br>{{pokemon.atk_sp_value}}</p>
+            </a></li>
+          <li><a href="#" class="twit_3">
+              <p><span>防御</span><br>{{pokemon.defend_value}}</p>
+            </a></li>
+          <li><a href="#" class="twit_3">
+              <p><span>特防<span><br>{{pokemon.defend_sp_value}}</p>
+            </a></li>
+          <li><a href="#" class="twit_3">
+              <p><span>速度</span><br>{{pokemon.speed_value}}</p>
+            </a></li>
+
+        </ul>
+      </div>
+      <ul class="social1 social_top">
+        <li><a href=""> </i>
+            <h3>{{moves.move1.name}}</h3>
+            <p>{{moves.move1.type}}</p>
+            <div class="clear"> </div>
+          </a></li>
+        <li class="last1"><a href=""> </i>
+            <h3>{{moves.move2.name}}</h3>
+            <p class="dribble">{{moves.move2.type}}</p>
+            <div class="clear"> </div>
+          </a></li>
+      </ul>
+      <ul class="social1">
+        <li class="tw"><a href=""> </i>
+            <h3>{{moves.move2.name}}</h3>
+            <p class="tw2">{{moves.move2.type}}</p>
+            <div class="clear"> </div>
+          </a></li>
+        <li class="rss"><a href=""> </i>
+            <h3>{{moves.move2.name}}</h3>
+            <p class="rss2">{{moves.move2.type}}</p>
+            <div class="clear"> </div>
+          </a></li>
+      </ul>
+
     </div>
-    <ul class="social1 social_top">
-			<li><a href=""> </i><h3>{{movename1}}</h3><p>{{movetype1}}</p>
-				<div class="clear"> </div>
-			</a></li>
-		    <li class="last1"><a href="">  </i><h3>{{movename2}}</h3><p class="dribble">{{movetype2}}</p>
-				<div class="clear"> </div>
-			</a></li>
-         </ul>
-         <ul class="social1">
-                <li class="tw"><a href=""> </i><h3>{{movename3}}</h3><p class="tw2">{{movetype3}}</p>
-                    <div class="clear"> </div>
-                </a></li>
-                <li class="rss"><a href="">  </i><h3>{{movename4}}</h3><p class="rss2">{{movetype4}}</p>
-                    <div class="clear"> </div>
-                </a></li>
-             </ul>
-	
-</div>
 </body>
-</html>
 
+</html>
