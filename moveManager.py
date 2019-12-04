@@ -17,12 +17,15 @@ import random
 class MoveManager():
 
     # 技能选择
-    def select(self, choose, data):
+    def select(self, data):
         #
-        pkmon_name = data["player"]["pkmon_name"]
-
+        print("选择技能:")
+        choose = int(input())
+        move = None
+        player = data["player"]["base_info"]
+        pkmon_name = player["name"]
         moves = data["player"]["moves"]
-        move = ''
+        
         if choose == 1:
             move = 'move1'
         elif choose == 2:
@@ -74,20 +77,27 @@ class MoveManager():
         7 天气、道具影响（暂无）
         8 产生1～100的随机数，如果小于等于命中，判定为命中，否则判定为失误。
         '''
-        our_stat = data["player"]["statistic"]
-        enemy_stat = data["enemy"]["statistic"]
+        our_stat = data["player"]["statistic_level"]
+        enemy_stat = data["enemy"]["statistic_level"]
         our_accuracy_level = our_stat["accuracy_level"]
         enmey_avoid_level = enemy_stat["avoid_level"]
         accuracy = moveinfo["accuracy"]
+        
+        
+            
         if accuracy == '—':
             print("必然命中!")
             return True
         final_level = int(our_accuracy_level)-int(enmey_avoid_level)
+        
+        
+            
         if final_level >= 6:
             final_level = 6
         elif final_level <= -6:
             final_level = -6
         final_accuracy = int(Statistic().accuracy_level_calc(accuracy,final_level))
+        
         print("基础命中率为%s \n命中等级为%s \n最终命中率为%d \n" % (accuracy, final_level, final_accuracy))
         randnum = random.randint(0, 100)
         print("随机数为%d" % randnum)

@@ -24,10 +24,10 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 def index():
 
     pokemon = RanomPkmon().random_pkmon()
-    serial_num = pokemon["serial_num"]
+    num = pokemon["num"]
     moves = pokemon["moves"]
 
-    gifname = '%s.gif' % serial_num
+    gifname = '%s.gif' % num
     # moves=pokemon["moves"]
     # move1=moves["move1"]
 

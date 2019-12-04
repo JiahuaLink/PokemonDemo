@@ -54,7 +54,30 @@ class GenerateMove():
         move_accuracy = move_raw[6]
         # 技能点数
         move_pp = move_raw[7]
+        
+        
 
+        died = move_raw[8]
+        # 异常状态 中毒,烧伤,麻痹,睡眠,冰冻获取命中率
+        # 中毒
+        poison = move_raw[9]
+        
+        # 烧伤
+        burn = move_raw[10]
+        # 麻痹
+        paralysis = move_raw[11]
+        # 睡眠
+        sleep = move_raw[12]
+        # 冰冻
+        freeze = move_raw[13]
+        #
+        unormal_stat = {
+            "poison": poison,
+            "burn": burn,
+            "paralysis": paralysis,
+            "sleep": sleep,
+            "freeze": freeze,
+        }
         # 选择技能
         # print("技能%d:%s" % (num, move_name))
 
@@ -68,7 +91,8 @@ class GenerateMove():
             "power": move_power,
             "category": move_category,
             "accuracy": move_accuracy,
-            "pp": move_pp
+            "pp": move_pp,
+            "unormal_stat":unormal_stat
         }
 
         return move

@@ -21,9 +21,8 @@ class BattleEvent(object):
         movesinfo3 = moves["move3"]
         movesinfo4 = moves["move4"] 
         print(movesinfo1["name"], movesinfo2["name"], movesinfo3["name"], movesinfo4["name"])
-        print("选择技能:")
-        choose = int(input())
-        MoveManager().select(choose, data)
+
+        MoveManager().select(data)
     # 选择逃跑
     def run_event(self):
 

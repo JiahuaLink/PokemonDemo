@@ -23,7 +23,8 @@ class BattleRoom():
         battle_manger = {'player': mypkmon, 'enemy': wild_pkmon}
         # print(battle_manger)
         # 测试获取的等级
-        print("该你上场了，去吧，%s!\n" % battle_manger['player']['pkmon_name'])
+        pkmoninfo = battle_manger["player"]["base_info"]
+        print("该你上场了，去吧，%s!\n" % pkmoninfo['name'])
         
         FileManager().save_battle_env(battle_manger)
         BattleProcess().start(battle_manger)

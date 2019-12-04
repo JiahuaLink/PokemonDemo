@@ -11,7 +11,7 @@
 
 # here put the import lib
 import random
-from fileManager import InitConfig
+from fileManager import InitConfig,FileManager
 import randomStats as selector
 from generateMoves import GenerateMove
 from packagePokemon import BattlePokemon
@@ -68,13 +68,13 @@ class RanomPkmon():
         #        ability, hp_value, atk_value, defend_value, atk_sp_value,
         #        defend_sp_value, speed_value, hp_v, atk_v, defend_v, atk_sp_v,
         #        defend_sp_v, speed_v, moves_dict))
-        # 保存随机精灵到文件
-        # data = zip([serial_num], [level], [pkmon_name], [pkmon_type1],
-        #            [pkmon_type2], [ability], [hp_value], [atk_value],
-        #            [defend_value], [atk_sp_value], [defend_sp_value],
-        #            [speed_value], [hp_v], [atk_v], [defend_v], [atk_sp_v],
-        #            [defend_sp_v], [speed_v], [moves_dict])
-        # FileManager().save2randompkmon(data)
+        #保存随机精灵到文件
+        data = zip([serial_num], [level], [pkmon_name], [pkmon_type1],
+                   [pkmon_type2], [ability], [hp_value], [atk_value],
+                   [defend_value], [atk_sp_value], [defend_sp_value],
+                   [speed_value], [hp_v], [atk_v], [defend_v], [atk_sp_v],
+                   [defend_sp_v], [speed_v], [moves_dict])
+        FileManager().save2randompkmon(data)
 
         wild_pkmon = BattlePokemon().package_pkmon(
             serial_num, level, pkmon_name, pkmon_type1, pkmon_type2, ability,

@@ -89,7 +89,7 @@ class DamagesTimes():
 class Damages():
     '''计算最终伤害量'''
     # 随机修正值
-    RANDOM_CORRECTION_VALUE = 255
+    RANDOM_CORRECTION = 255
     
     def damages_calc(self, moveinfo, data):
         ''' 伤害计算流程
@@ -121,26 +121,30 @@ class Damages():
             move_pp = int(moveinfo["pp"])
         else:
             move_pp = int(moveinfo["pp"])
-        our_level = int(data["player"]["level"])
-        own_type1 = data["player"]["pkmon_type1"]
-        own_type2 = data["player"]["pkmon_type2"]
-        own_hp = int(data["player"]["hp_value"])
-        own_atk = int(data["player"]["atk_value"])
-        own_defend = int(data["player"]["defend_value"])
-        own_atk_sp = int(data["player"]["atk_sp_value"])
-        own_defend_sp = int(data["player"]["defend_sp_value"])
-        own_speed = int(data["player"]["speed_value"])
+        our_info = data["player"]["base_info"]
+        our_statistic = data["player"]["statistic"]
+        our_level = int(our_info["level"])
+        own_type1 = our_info["type1"]
+        own_type2 = our_info["type2"]
+        own_hp = int(our_statistic["hp"])
+        own_atk = int(our_statistic["atk"])
+        own_defend = int(our_statistic["defend"])
+        own_atk_sp = int(our_statistic["atk_sp"])
+        own_defend_sp = int(our_statistic["defend_sp"])
+        own_speed = int(our_statistic["speed"])
 
-        enmey_name = data["enemy"]["pkmon_name"]
-        enemy_level = int(data["enemy"]["level"])
-        enemy_type1 = data["enemy"]["pkmon_type1"]
-        enemy_type2 = data["enemy"]["pkmon_type2"]
-        enemy_hp = int(data["enemy"]["hp_value"])
-        enemy_atk = int(data["enemy"]["atk_value"])
-        enemy_defend = int(data["enemy"]["defend_value"])
-        enemy_atk_sp = int(data["enemy"]["atk_sp_value"])
-        enemy_defend_sp = int(data["enemy"]["defend_sp_value"])
-        enemy_speed = int(data["enemy"]["speed_value"])
+        enemy_info = data["enemy"]["base_info"]
+        enemy_statistic = data["enemy"]["statistic"]
+        enmey_name = enemy_info["name"]
+        enemy_level = int(enemy_info["level"])
+        enemy_type1 = enemy_info["type1"]
+        enemy_type2 = enemy_info["type2"]
+        enemy_hp = int(enemy_statistic["hp"])
+        enemy_atk = int(enemy_statistic["atk"])
+        enemy_defend = int(enemy_statistic["defend"])
+        enemy_atk_sp = int(enemy_statistic["atk_sp"])
+        enemy_defend_sp = int(enemy_statistic["defend_sp"])
+        enemy_speed = int(enemy_statistic["speed"])
         
         print("敌方体力为%d" % enemy_hp)
         level, atk, defend = self.read_stats(our_level, move_category, own_atk, own_atk_sp, enemy_defend, enemy_defend_sp)
@@ -150,10 +154,10 @@ class Damages():
         times = DamagesTimes().times_calc(move_type, enemy_type1, enemy_type2)
         times_damage = bonuses_damage * times
         damages = self.random_correction_damage(times_damage)
-        if data["enemy"]["hp_value"] <=0:
-           data["enemy"]["hp_value"] = 0 
+        if enemy_statistic["hp"] <=0:
+           enemy_statistic["hp"] = 0 
         else:
-            data["enemy"]["hp_value"]-= damages
+            enemy_statistic["hp"]-= damages
         print("%s受到%d点伤害" % (enmey_name, damages))
         return data
 
@@ -215,12 +219,12 @@ class Damages():
         从0～255中产生随机数R，如果R＜217，重复循环，直到R≥217。
         伤害＝⌊伤害×R÷255⌋
         '''
-        r_value = RandomNum().random_num(self.RANDOM_CORRECTION_VALUE)
-        print("随机修正值%d" % r_value)
-        while r_value < 127:
-            r_value = RandomNum().random_num(self.RANDOM_CORRECTION_VALUE)
-        damage = (damage * r_value / 255)
-        print("修正后随机修正值为:%d\n伤害值为%d\n" % (r_value, damage))
+        r = RandomNum().random_num(self.RANDOM_CORRECTION)
+        print("随机修正值%d" % r)
+        while r < 127:
+            r = RandomNum().random_num(self.RANDOM_CORRECTION)
+        damage = (damage * r / 255)
+        print("修正后随机修正值为:%d\n伤害值为%d\n" % (r, damage))
         return int(damage)
 
 # if __name__ == "__main__":
