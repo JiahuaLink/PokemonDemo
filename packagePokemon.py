@@ -68,11 +68,19 @@ class BattlePokemon():
             "speed_v": speed_v
         }
 
+        # 宝可梦的状态 濒死，异常，捆绑，混乱
+        status_condition = {
+            "died":0,
+            "volatile_status":0,
+            "bound" : 0,
+            "confusion" : 0
+        }
         pokemon = {
             "base_info": base_info,
             "statistic": statistic,
             "individual": individual,
             "statistic_level": statistic_level,
+            "status_condition":status_condition,
             "moves": moves
         }
         return pokemon

@@ -43,29 +43,13 @@ class MoveManager():
         print("%s使出了%s" % (pkmon_name, moveinfo["name"]))
         # 计算是否命中
         isHit = self.is_move_accuracy(moveinfo, data)
-        if isHit == True:
-            
+        if isHit == True:    
             # 判断技能类型进行伤害计算后返回计算后的值
             data = self.move_effect(moveinfo, data)
-        
-        # 保存伤害计算结果
-
-        FileManager().save_battle_env(data)
-
-    # 判断是什么类型的招式 物理 特殊 变化
-    def move_effect(self, moveinfo, data):
-        category = moveinfo["category"]
-        if category == "物理" or category == "特殊":
             
-            # 计算物理特殊伤害
-            data = Damages().damages_calc(moveinfo, data)
-        elif category == "变化":
-            # 变化伤害
-            print("变化技能")
-        else:
-            pass
-        return data
-
+        # 保存伤害计算结果
+        FileManager().save_battle_env(data)
+        
     def is_move_accuracy(self, moveinfo, data):
         '''
         1 判断特性对命中的影响(暂无)
@@ -82,8 +66,6 @@ class MoveManager():
         our_accuracy_level = our_stat["accuracy_level"]
         enmey_avoid_level = enemy_stat["avoid_level"]
         accuracy = moveinfo["accuracy"]
-        
-        
             
         if accuracy == '—':
             print("必然命中!")
@@ -107,6 +89,23 @@ class MoveManager():
         else:
             print("没有命中敌人")
             return False
+    # 判断是什么类型的招式 物理 特殊 变化,判断有没有异常状态
+    def move_effect(self, moveinfo, data):
+        category = moveinfo["category"]
+        if category == "物理" or category == "特殊":
+            
+            # 计算物理特殊伤害
+            data = Damages().damages_calc(moveinfo, data)
+            
+            # 检测技能的异常效果
+        elif category == "变化":
+            # 变化伤害
+            print("变化技能")
+        else:
+            pass
+        return data
+
+
         
         
         

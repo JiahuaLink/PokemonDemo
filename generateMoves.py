@@ -61,7 +61,6 @@ class GenerateMove():
         # 异常状态 中毒,烧伤,麻痹,睡眠,冰冻获取命中率
         # 中毒
         poison = move_raw[9]
-        
         # 烧伤
         burn = move_raw[10]
         # 麻痹
@@ -71,7 +70,7 @@ class GenerateMove():
         # 冰冻
         freeze = move_raw[13]
         #
-        unormal_stat = {
+        volatile_state = {
             "poison": poison,
             "burn": burn,
             "paralysis": paralysis,
@@ -92,7 +91,7 @@ class GenerateMove():
             "category": move_category,
             "accuracy": move_accuracy,
             "pp": move_pp,
-            "unormal_stat":unormal_stat
+            "volatile_state":volatile_state
         }
 
         return move
