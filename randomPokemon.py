@@ -69,12 +69,12 @@ class RandomPkmon():
         #        defend_sp_value, speed_value, hp_v, atk_v, defend_v, atk_sp_v,
         #        defend_sp_v, speed_v, moves_dict))
         #保存随机精灵到文件
-        data = zip([serial_num], [level], [pkmon_name], [pkmon_type1],
-                   [pkmon_type2], [ability], [hp_value], [atk_value],
-                   [defend_value], [atk_sp_value], [defend_sp_value],
-                   [speed_value], [hp_v], [atk_v], [defend_v], [atk_sp_v],
-                   [defend_sp_v], [speed_v], [moves_dict])
-        FileManager().save2randompkmon(data)
+        # # data = zip([serial_num], [level], [pkmon_name], [pkmon_type1],
+                # #    [pkmon_type2], [ability], [hp_value], [atk_value],
+                # #    [defend_value], [atk_sp_value], [defend_sp_value],
+                # #    [speed_value], [hp_v], [atk_v], [defend_v], [atk_sp_v],
+                #    [defend_sp_v], [speed_v], [moves_dict])
+        # FileManager().save2randompkmon(data)
 
         wild_pkmon = BattlePokemon().package_pkmon(
             serial_num, level, pkmon_name, pkmon_type1, pkmon_type2, ability,
