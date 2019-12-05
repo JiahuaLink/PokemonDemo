@@ -492,7 +492,7 @@ ul.menu_7 li a{
 }
 ul.menu_7 li a span{
 	font-weight:700;
-	font-size: 14px;
+	font-size: 13px;
 }
 ul.menu_7 li a:hover, .menu_7_active{
 	background:#3bafda;
@@ -2188,12 +2188,12 @@ ul.social1 li {
   margin-right: 5%;
 }
 ul.social1 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.social1 li{
   display: inline-block;
   background: #5d9cec;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #225699;
@@ -2204,7 +2204,7 @@ ul.social1 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.social1 li p{
   float: right;
@@ -2233,12 +2233,12 @@ ul.mtype1 li {
   margin-right: 5%;
 }
 ul.mtype1 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype1 li{
   display: inline-block;
   background: #9199A1;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #53575c;
@@ -2249,7 +2249,7 @@ ul.mtype1 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype1 li p{
   float: right;
@@ -2278,12 +2278,12 @@ ul.mtype2 li {
   margin-right: 5%;
 }
 ul.mtype2 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype2 li{
   display: inline-block;
   background: #CD406A;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #b6395f;
@@ -2294,7 +2294,7 @@ ul.mtype2 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype2 li p{
   float: right;
@@ -2322,12 +2322,12 @@ ul.mtype3 li {
   margin-right: 5%;
 }
 ul.mtype3 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype3 li{
   display: inline-block;
   background: #96AADF;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #8798c7;
@@ -2338,7 +2338,7 @@ ul.mtype3 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype3 li p{
   float: right;
@@ -2367,12 +2367,12 @@ ul.mtype4 li {
   margin-right: 5%;
 }
 ul.mtype4 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype4 li{
   display: inline-block;
   background: #A96AC8;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #8952a5;
@@ -2383,7 +2383,7 @@ ul.mtype4 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype4 li p{
   float: right;
@@ -2412,12 +2412,12 @@ ul.mtype5 li {
   margin-right: 5%;
 }
 ul.mtype5 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype5 li{
   display: inline-block;
   background: #D87844;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #a05832;
@@ -2428,7 +2428,7 @@ ul.mtype5 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype5 li p{
   float: right;
@@ -2456,12 +2456,12 @@ ul.mtype6 li {
   margin-right: 5%;
 }
 ul.mtype6 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype6 li{
   display: inline-block;
   background: #C5B727;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #a59a27;
@@ -2472,7 +2472,7 @@ ul.mtype6 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype6 li p{
   float: right;
@@ -2500,12 +2500,12 @@ ul.mtype7 li {
   margin-right: 5%;
 }
 ul.mtype7 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype7 li{
   display: inline-block;
   background: #91C02E;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #5a7a15;
@@ -2516,7 +2516,7 @@ ul.mtype7 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype7 li p{
   float: right;
@@ -2545,12 +2545,12 @@ ul.mtype8 li {
   margin-right: 5%;
 }
 ul.mtype8 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype8 li{
   display: inline-block;
   background: #5269AC;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #2d3d6b;
@@ -2561,7 +2561,7 @@ ul.mtype8 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype8 li p{
   float: right;
@@ -2589,12 +2589,12 @@ ul.mtype9 li {
   margin-right: 5%;
 }
 ul.mtype9 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype9 li{
   display: inline-block;
   background: #58929F;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #3f707a;
@@ -2605,7 +2605,7 @@ ul.mtype9 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype9 li p{
   float: right;
@@ -2633,12 +2633,12 @@ ul.mtype10 li {
   margin-right: 5%;
 }
 ul.mtype10 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype10 li{
   display: inline-block;
   background: #FE9C54;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #b16833;
@@ -2649,7 +2649,7 @@ ul.mtype10 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype10 li p{
   float: right;
@@ -2678,12 +2678,12 @@ ul.mtype11 li {
   margin-right: 5%;
 }
 ul.mtype11 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype11 li{
   display: inline-block;
   background: #4F90D5;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #31659c;
@@ -2694,7 +2694,7 @@ ul.mtype11 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype11 li p{
   float: right;
@@ -2722,12 +2722,12 @@ ul.mtype12 li {
   margin-right: 5%;
 }
 ul.mtype12 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype12 li{
   display: inline-block;
   background: #62B45A;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #31659c;
@@ -2738,7 +2738,7 @@ ul.mtype12 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype12 li p{
   float: right;
@@ -2766,12 +2766,12 @@ ul.mtype13 li {
   margin-right: 5%;
 }
 ul.mtype13 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype13 li{
   display: inline-block;
   background: #F4D23C;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #c0a52e;
@@ -2782,7 +2782,7 @@ ul.mtype13 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype13 li p{
   float: right;
@@ -2811,12 +2811,12 @@ ul.mtype14 li {
   margin-right: 5%;
 }
 ul.mtype14 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype14 li{
   display: inline-block;
   background: #FA7178;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #8d3539;
@@ -2827,7 +2827,7 @@ ul.mtype14 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype14 li p{
   float: right;
@@ -2856,12 +2856,12 @@ ul.mtype15 li {
   margin-right: 5%;
 }
 ul.mtype15 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype15 li{
   display: inline-block;
   background: #73D5BF;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #54aa97;
@@ -2872,7 +2872,7 @@ ul.mtype15 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype15 li p{
   float: right;
@@ -2901,12 +2901,12 @@ ul.mtype16 li {
   margin-right: 5%;
 }
 ul.mtype16 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype16 li{
   display: inline-block;
   background: #0A6DC2;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #0b4f8a;
@@ -2917,7 +2917,7 @@ ul.mtype16 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype16 li p{
   float: right;
@@ -2945,12 +2945,12 @@ ul.mtype17 li {
   margin-right: 5%;
 }
 ul.mtype17 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype17 li{
   display: inline-block;
   background: #5A5365;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #484152;
@@ -2961,7 +2961,7 @@ ul.mtype17 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype17 li p{
   float: right;
@@ -2989,12 +2989,12 @@ ul.mtype18 li {
   margin-right: 5%;
 }
 ul.mtype18 li h3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype18 li{
   display: inline-block;
   background: #EB8FE6;
-  width: 53%;
+  width: 56%;
   min-height: 40px;
   line-height: 40px;
   border-bottom: 2px solid #b660b2;
@@ -3005,7 +3005,7 @@ ul.mtype18 li{
   -o-border-radius: 4px;
   margin-right: 12%;
   padding: 1px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.mtype18 li p{
   float: right;
@@ -3690,7 +3690,7 @@ ul.social_login li {
 }
 ul.social_login li a{
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
 }
@@ -3950,7 +3950,7 @@ ul.white-tag-list1 li.middle2 {
   font-size: 1.2em;
 }
 .menu_2 h2 {
-  width: 53%;
+  width: 56%;
   font-size: 1.2em;
 }
 .menu_3 h2 {
