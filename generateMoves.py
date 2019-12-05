@@ -70,12 +70,12 @@ class GenerateMove():
         # 冰冻
         freeze = move_raw[13]
         #
-        volatile_state = {
-            "poison": poison,
-            "burn": burn,
-            "paralysis": paralysis,
-            "sleep": sleep,
-            "freeze": freeze,
+        volatile = {
+            "中毒": poison,
+            "灼伤": burn,
+            "麻痹": paralysis,
+            "睡眠": sleep,
+            "冰冻": freeze,
         }
         # 选择技能
         # print("技能%d:%s" % (num, move_name))
@@ -91,7 +91,6 @@ class GenerateMove():
             "category": move_category,
             "accuracy": move_accuracy,
             "pp": move_pp,
-            "volatile_state":volatile_state
+            "volatile":volatile
         }
-
         return move

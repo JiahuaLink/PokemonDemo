@@ -19,6 +19,7 @@ class DamagesTimes():
     POKEMON_TYPE = 'battletype.csv'
     # 根据属性名字找下标
     type_dict = {
+        "":'0',
         '一般': '1',
         '格斗': '2',
         '飞行': '3',

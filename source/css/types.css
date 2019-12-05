@@ -1,0 +1,328 @@
+.tag6{
+    background:#a0d468;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #80b448;
+    -webkit-box-shadow: 0px 2px 0px 0px #80b448;
+    -moz-box-shadow: 0px 2px 0px 0px #80b448;
+    -o-box-shadow: 0px 2px 0px 0px #80b448;
+  }
+
+/* 一般 #9199A1 */
+.type1{
+    background:#9199A1;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #53575c;
+    -webkit-box-shadow: 0px 2px 0px 0px #53575c;
+    -moz-box-shadow: 0px 2px 0px 0px #53575c;
+    -o-box-shadow: 0px 2px 0px 0px #53575c;
+  }
+/* 格斗  #CD406A */
+.type2{
+    background:#CD406A;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #b6395f;
+    -webkit-box-shadow: 0px 2px 0px 0px #b6395f;
+    -moz-box-shadow: 0px 2px 0px 0px #b6395f;
+    -o-box-shadow: 0px 2px 0px 0px #b6395f;
+  }
+/* 飞行  #96AADF */
+.type3{
+    background:#96AADF;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #8798c7;
+    -webkit-box-shadow: 0px 2px 0px 0px #8798c7;
+    -moz-box-shadow: 0px 2px 0px 0px #8798c7;
+    -o-box-shadow: 0px 2px 0px 0px #8798c7;
+  }
+/* 毒  #A96AC8 */
+.type4{
+    background:#A96AC8;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #8952a5;
+    -webkit-box-shadow: 0px 2px 0px 0px #8952a5;
+    -moz-box-shadow: 0px 2px 0px 0px #8952a5;
+    -o-box-shadow: 0px 2px 0px 0px #8952a5;
+  }
+/* 地面 #D87844 */
+.type5{
+    background:#D87844;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #a05832;
+    -webkit-box-shadow: 0px 2px 0px 0px #a05832;
+    -moz-box-shadow: 0px 2px 0px 0px #a05832;
+    -o-box-shadow: 0px 2px 0px 0px #a05832;
+  }
+/* 岩石 #C5B727 */
+.type6{
+    background:#C5B727;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #a59a27;
+    -webkit-box-shadow: 0px 2px 0px 0px #a59a27;
+    -moz-box-shadow: 0px 2px 0px 0px #a59a27;
+    -o-box-shadow: 0px 2px 0px 0px #a59a27;
+  }
+/* 虫 #91C02E */
+.type7{
+    background:#91C02E;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #5a7a15;
+    -webkit-box-shadow: 0px 2px 0px 0px #5a7a15;
+    -moz-box-shadow: 0px 2px 0px 0px #5a7a15;
+    -o-box-shadow: 0px 2px 0px 0px #5a7a15;
+  }
+
+/* 幽灵 #5269AC */
+.type8{
+    background:#5269AC;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #2d3d6b;
+    -webkit-box-shadow: 0px 2px 0px 0px #2d3d6b;
+    -moz-box-shadow: 0px 2px 0px 0px #2d3d6b;
+    -o-box-shadow: 0px 2px 0px 0px #2d3d6b;
+  }
+
+/* 钢  #58929F */
+.type9{
+    background:#58929F;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #3f707a;
+    -webkit-box-shadow: 0px 2px 0px 0px #3f707a;
+    -moz-box-shadow: 0px 2px 0px 0px #3f707a;
+    -o-box-shadow: 0px 2px 0px 0px #3f707a;
+  }
+/* 火  #FE9C54 */
+.type10{
+    background:#FE9C54;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #b16833;
+    -webkit-box-shadow: 0px 2px 0px 0px #b16833;
+    -moz-box-shadow: 0px 2px 0px 0px #b16833;
+    -o-box-shadow: 0px 2px 0px 0px #b16833;
+  }
+/* 水  #4F90D5   */
+.type11{
+    background:#4F90D5;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #31659c;
+    -webkit-box-shadow: 0px 2px 0px 0px #31659c;
+    -moz-box-shadow: 0px 2px 0px 0px #31659c;
+    -o-box-shadow: 0px 2px 0px 0px #31659c;
+  }
+/* 草  #62B45A */
+.type12{
+    background:#62B45A;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #468640;
+    -webkit-box-shadow: 0px 2px 0px 0px #468640;
+    -moz-box-shadow: 0px 2px 0px 0px #468640;
+    -o-box-shadow: 0px 2px 0px 0px #468640;
+  }
+/* 电  #F4D23C */
+.type13{
+    background:#F4D23C;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #c0a52e;
+    -webkit-box-shadow: 0px 2px 0px 0px #c0a52e;
+    -moz-box-shadow: 0px 2px 0px 0px #c0a52e;
+    -o-box-shadow: 0px 2px 0px 0px #c0a52e;
+  }
+/* 超能  #FA7178 */
+.type14{
+    background:#FA7178;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #c05157;
+    -webkit-box-shadow: 0px 2px 0px 0px #FA7178;
+    -moz-box-shadow: 0px 2px 0px 0px #FA7178;
+    -o-box-shadow: 0px 2px 0px 0px #FA7178;
+  }
+/* 冰 #73D5BF */
+.type15{
+    background:#73D5BF;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #54aa97;
+    -webkit-box-shadow: 0px 2px 0px 0px #54aa97;
+    -moz-box-shadow: 0px 2px 0px 0px #54aa97;
+    -o-box-shadow: 0px 2px 0px 0px #54aa97;
+  }
+  /* 龙 #0A6DC2 */
+  .type16{
+    background:#0A6DC2;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #0b4f8a;
+    -webkit-box-shadow: 0px 2px 0px 0px #0b4f8a;
+    -moz-box-shadow: 0px 2px 0px 0px #0b4f8a;
+    -o-box-shadow: 0px 2px 0px 0px #0b4f8a;
+  }
+/* 恶  #5A5365 */
+.type17{
+    background:#5A5365;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #484152;
+    -webkit-box-shadow: 0px 2px 0px 0px #484152;
+    -moz-box-shadow: 0px 2px 0px 0px #484152;
+    -o-box-shadow: 0px 2px 0px 0px #484152;
+  }
+/* 妖精' #EB8FE6 */
+.type18{
+    background:#EB8FE6;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    display: block;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 2px 0px 0px #b660b2;
+    -webkit-box-shadow: 0px 2px 0px 0px #b660b2;
+    -moz-box-shadow: 0px 2px 0px 0px #b660b2;
+    -o-box-shadow: 0px 2px 0px 0px #b660b2;
+  }
+
+
+  

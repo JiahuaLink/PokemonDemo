@@ -25,7 +25,6 @@ class MoveManager():
         player = data["player"]["base_info"]
         pkmon_name = player["name"]
         moves = data["player"]["moves"]
-        
         if choose == 1:
             move = 'move1'
         elif choose == 2:
@@ -36,7 +35,6 @@ class MoveManager():
             move = 'move4'
         else:
             print("啥都没做")
-
 
         # 选其中一个技能 
         moveinfo = moves[move]
@@ -71,8 +69,6 @@ class MoveManager():
             print("必然命中!")
             return True
         final_level = int(our_accuracy_level)-int(enmey_avoid_level)
-        
-        
             
         if final_level >= 6:
             final_level = 6
@@ -89,26 +85,46 @@ class MoveManager():
         else:
             print("没有命中敌人")
             return False
-    # 判断是什么类型的招式 物理 特殊 变化,判断有没有异常状态
+    # 
     def move_effect(self, moveinfo, data):
+        '''
+        判断是什么类型的招式 物理 特殊 变化,判断有没有异常状态
+        '''
         category = moveinfo["category"]
         if category == "物理" or category == "特殊":
             
             # 计算物理特殊伤害
             data = Damages().damages_calc(moveinfo, data)
+            # 计算技能状态效果
+            data = self.additional_effect(moveinfo,data)
+            # 检测技能的异常效果           
             
-            # 检测技能的异常效果
         elif category == "变化":
             # 变化伤害
             print("变化技能")
         else:
             pass
         return data
-
-
+    
+    def additional_effect(self,moveinfo,data):
+        volatile = moveinfo["volatile"]
+        for style, effect in volatile.items():
+            if effect !=0:
+                print("有%s效果" % style)
+                '''
+                判断技能触发
+                '''
+                volatile_rate = effect
+                status = data["enemy"]["status"]
+                randnum = random.randint(0,100)
+                print("随机数为%s" % randnum)
+                if randnum <= volatile_rate:
+                    print("敌人%s了" % style)
+                    status["volatile"] = style
+                else:
+                    print("没有命中异常状态")
+                data["enemy"]["status"] = status
+        
+        return data
         
         
-        
-        
-class MovesList():
-    pass

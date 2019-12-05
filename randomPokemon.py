@@ -18,7 +18,7 @@ from packagePokemon import BattlePokemon
 import numpy as np
 
 
-class RanomPkmon():
+class RandomPkmon():
     PKMONDEX_FILE = "pkmondex.csv"
 
     def random_pkmon(self):

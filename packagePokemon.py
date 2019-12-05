@@ -71,7 +71,7 @@ class BattlePokemon():
         # 宝可梦的状态 濒死，异常，捆绑，混乱
         status_condition = {
             "died":0,
-            "volatile_status":0,
+            "volatile":0,
             "bound" : 0,
             "confusion" : 0
         }
@@ -80,7 +80,7 @@ class BattlePokemon():
             "statistic": statistic,
             "individual": individual,
             "statistic_level": statistic_level,
-            "status_condition":status_condition,
+            "status":status_condition,
             "moves": moves
         }
         return pokemon

@@ -36,7 +36,7 @@
                 height="150" alt="该宝可梦没有图哦～～" /></a></div>
         </div>
         <div class="latest_tweets">
-          <h3>Lv.{{pokemon.level}} {{pokemon.pkmon_name}}</h3>
+          <h3>Lv.{{pokemon.level}} {{pokemon.name}}</h3>
         </div>
 
         <div class="skills">
@@ -48,7 +48,8 @@
 
         <div class="big-buttons-col2">
           <ul>
-            <li><input class="tag6" type="button" value="{{pokemon.pkmon_type1}}   {{pokemon.pkmon_type2}}"></li>
+            <li><input class="type{{type_index1}}" type="button" value="{{pokemon.type1}} "></li>
+            <li><input class="type{{type_index2}}" type="button" value="{{pokemon.type2}}"></li>
             <li><input class="tag5" type="button" value="{{pokemon.ability}}"></li>
 
           </ul>
@@ -80,30 +81,39 @@
 
         </ul>
       </div>
-      <ul class="social1 social_top">
-        <li><a href=""> </i>
+      <ul class="mtype{{move_index1}}">
+        <li><a class="mtype{{move_index1}}" href=""> </i>
             <h3>{{moves.move1.name}}</h3>
-            <p>{{moves.move1.type}}</p>
-            <div class="clear"> </div>
+            <p class="mtype{{move_index1}}">{{moves.move1.type}}  </p>
+            <div class="mtype{{move_index1}}"> </div>
           </a></li>
-        <li class="last1"><a href=""> </i>
+        
+      </ul>
+      <ul class="mtype{{move_index2}}">
+        <li><a class="mtype{{move_index2}}" href=""> </i>
             <h3>{{moves.move2.name}}</h3>
-            <p class="dribble">{{moves.move2.type}}</p>
-            <div class="clear"> </div>
+            <p class="mtype{{move_index2}}">{{moves.move2.type}}  </p>
+            <div class="mtype{{move_index2}}"> </div>
           </a></li>
+        
       </ul>
-      <ul class="social1">
-        <li class="tw"><a href=""> </i>
+      <ul class="mtype{{move_index3}}">
+        <li><a class="mtype{{move_index3}}" href=""> </i>
             <h3>{{moves.move3.name}}</h3>
-            <p class="tw2">{{moves.move3.type}}</p>
-            <div class="clear"> </div>
+            <p class="mtype{{move_index3}}">{{moves.move3.type}}  </p>
+            <div class="mtype{{move_index3}}"> </div>
           </a></li>
-        <li class="rss"><a href=""> </i>
-            <h3>{{moves.move4.name}}</h3>
-            <p class="rss2">{{moves.move4.type}}</p>
-            <div class="clear"> </div>
-          </a></li>
+        
       </ul>
+      <ul class="mtype{{move_index4}}">
+        <li><a class="mtype{{move_index4}}" href=""> </i>
+            <h3>{{moves.move4.name}}</h3>
+            <p class="mtype{{move_index4}}">{{moves.move4.type}}  </p>
+            <div class="mtype{{move_index4}}"> </div>
+          </a></li>
+        
+      </ul>
+
 
     </div>
 </body>
