@@ -30,6 +30,7 @@ def index():
 
     pokemon = RandomPkmon().random_pkmon()
     info = pokemon["base_info"]
+    stats = pokemon["statistic"]
     num = info["num"]
     name = info["name"]
     level = info["level"]
@@ -49,7 +50,7 @@ def index():
 
     context = "%s 用户%s 遇到了 LV.%s %s" % (now, ip, level, name)
     FileManager().save2log(context)
-    return render_template('index.html', filename=gifname, pokemon=info,type_index1=type_index1, type_index2=type_index2, moves=moves,move_index1=move_index1,move_index2=move_index2,move_index3=move_index3,move_index4=move_index4)
+    return render_template('index.html', filename=gifname,info=info,pokemon=stats,type_index1=type_index1, type_index2=type_index2, moves=moves,move_index1=move_index1,move_index2=move_index2,move_index3=move_index3,move_index4=move_index4)
 
 
 if __name__ == "__main__":

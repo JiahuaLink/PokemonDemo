@@ -36,7 +36,7 @@
                 height="150" alt="该宝可梦没有图哦～～" /></a></div>
         </div>
         <div class="latest_tweets">
-          <h3>Lv.{{pokemon.level}} {{pokemon.name}}</h3>
+          <h3>Lv.{{info.level}} {{info.name}}</h3>
         </div>
 
         <div class="skills">
@@ -48,9 +48,9 @@
 
         <div class="big-buttons-col2">
           <ul>
-            <li><input class="type{{type_index1}}" type="button" value="{{pokemon.type1}} "></li>
-            <li><input class="type{{type_index2}}" type="button" value="{{pokemon.type2}}"></li>
-            <li><input class="tag5" type="button" value="{{pokemon.ability}}"></li>
+            <li><input class="type{{type_index1}}" type="button" value="{{info.type1}} "></li>
+            <li><input class="type{{type_index2}}" type="button" value="{{info.type2}}"></li>
+            <li><input class="tag5" type="button" value="{{info.ability}}"></li>
 
           </ul>
         </div>
@@ -60,23 +60,23 @@
 
         <ul class="twit_nav">
           <li><a href="#" class="twit_2">
-              <p><span>体力</span><br>{{pokemon.hp_value}}</p>
+              <p><span>体力</span><br>{{pokemon.hp}}</p>
             </a></li>
           <li><a href="#" class="twit_1">
-              <p><span>攻击</span><br>{{pokemon.atk_value}}</p>
+              <p><span>攻击</span><br>{{pokemon.atk}}</p>
             </a></li>
 
           <li><a href="#" class="twit_1">
-              <p><span>特攻</span><br>{{pokemon.atk_sp_value}}</p>
+              <p><span>特攻</span><br>{{pokemon.atk_sp}}</p>
             </a></li>
           <li><a href="#" class="twit_3">
-              <p><span>防御</span><br>{{pokemon.defend_value}}</p>
+              <p><span>防御</span><br>{{pokemon.defend}}</p>
             </a></li>
           <li><a href="#" class="twit_3">
-              <p><span>特防<span><br>{{pokemon.defend_sp_value}}</p>
+              <p><span>特防<span><br>{{pokemon.defend_sp}}</p>
             </a></li>
           <li><a href="#" class="twit_3">
-              <p><span>速度</span><br>{{pokemon.speed_value}}</p>
+              <p><span>速度</span><br>{{pokemon.speed}}</p>
             </a></li>
 
         </ul>
