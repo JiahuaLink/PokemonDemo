@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 # -*- encoding: utf-8 -*-
 '''
 @File    :   main.py
@@ -7,6 +7,7 @@
 @Version :   1.0
 @Contact :   840132699@qq.com
 @Desc    :   主函数
+
 '''
 
 import os
@@ -36,21 +37,18 @@ def index():
     level = info["level"]
     moves = pokemon["moves"]
     dt = DamagesTimes()
-    type_index1 =dt.get_type_index(info["type1"])
+    type_index1 = dt.get_type_index(info["type1"])
     type_index2 = dt.get_type_index(info["type2"])
     gifname = '%s.gif' % num
     # moves=pokemon["moves"]
-    move_index1=dt.get_type_index(moves["move1"]["type"])
-    move_index2=dt.get_type_index(moves["move2"]["type"])
-    move_index3=dt.get_type_index(moves["move3"]["type"])
-    move_index4=dt.get_type_index(moves["move4"]["type"])
-    
-    
-    
+    move_index1 = dt.get_type_index(moves["move1"]["type"])
+    move_index2 = dt.get_type_index(moves["move2"]["type"])
+    move_index3 = dt.get_type_index(moves["move3"]["type"])
+    move_index4 = dt.get_type_index(moves["move4"]["type"])
 
     context = "%s 用户%s 遇到了 LV.%s %s" % (now, ip, level, name)
     FileManager().save2log(context)
-    return render_template('index.html', filename=gifname,info=info,pokemon=stats,type_index1=type_index1, type_index2=type_index2, moves=moves,move_index1=move_index1,move_index2=move_index2,move_index3=move_index3,move_index4=move_index4)
+    return render_template('index.html', filename=gifname, info=info, pokemon=stats, type_index1=type_index1, type_index2=type_index2, moves=moves, move_index1=move_index1, move_index2=move_index2, move_index3=move_index3, move_index4=move_index4)
 
 
 if __name__ == "__main__":
@@ -58,5 +56,5 @@ if __name__ == "__main__":
     pokemon = RandomPkmon().random_pkmon()
     mypkmon = MyPkmon().get_my_pkmon()
     # print(pokemon)
-    #BattleRoom().battlewith(mypkmon, pokemon)
-    app.run(host="127.0.0.1", port=8000, debug=True)
+    BattleRoom().battlewith(mypkmon, pokemon)
+    # app.run(host="127.0.0.1", port=8000, debug=True)

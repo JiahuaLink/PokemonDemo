@@ -6,7 +6,7 @@
 @Author  :   Jawa 
 @Version :   1.0
 @Contact :   840132699@qq.com
-@Desc    :   玩家控制
+@Desc    :   控制事件
 '''
 
 # here put the import lib
@@ -21,7 +21,7 @@ class PlayerControls():
         choose = int(input())
         if choose == 1:
             print("%s选择了攻击" % player["name"])
-            BattleEvent().atk_event(data)
+            BattleEvent().atk_event(data,"player","enemy")
         elif choose == 2:
             print("背包")
         elif choose == 3:
@@ -30,3 +30,9 @@ class PlayerControls():
             print("逃跑")
         else:
             print("命令错误")
+
+class EnemyControls():
+    
+    
+    def enemycontrols(self, data):
+        BattleEvent().atk_event(data,"enemy","player")

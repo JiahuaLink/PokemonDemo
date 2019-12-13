@@ -14,15 +14,14 @@ from moveManager import MoveManager
 # here put the import lib
 class BattleEvent(object):
     # 选择攻击
-    def atk_event(self, data):
-        moves = data["player"]["moves"]
+    def atk_event(self, data, myself, aims):
+        moves = data[myself]["moves"]
         movesinfo1 = moves["move1"]
         movesinfo2 = moves["move2"]
         movesinfo3 = moves["move3"]
         movesinfo4 = moves["move4"] 
         print(movesinfo1["name"], movesinfo2["name"], movesinfo3["name"], movesinfo4["name"])
-
-        MoveManager().select(data)
+        MoveManager().select(data, myself, aims)
     # 选择逃跑
     def run_event(self):
 

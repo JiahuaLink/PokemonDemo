@@ -9,10 +9,10 @@
     type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
   <meta name="keywords" content="野生宝可梦" />
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js')}}">
+        </script>
   <!-- Custom Theme files -->
   <link href="{{ url_for('static', filename='css/style.css')}}" rel='stylesheet' type='text/css' />
-  <script type="text/javascript" src="{{ url_for('static', filename='js/Chart.js')}}"></script>
   <!-- Google Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
   <!---tage-script---->
@@ -26,26 +26,28 @@
 
 <body>
   <div class="wrap">
+    
     <div class="top_grid">
       <!-- menus starts here -->
       <!-- Search bar  -->
       <!-- Twitter Widget 1 -->
       <div class="twitter_widget_1">
         <div class="twit_1_banner">
-          <div class="twit_1_img"><a href="#"><img src="{{ url_for('static', filename=filename)}}" width="auto"
-                height="150" alt="该宝可梦没有图哦～～" /></a></div>
+          <div class="twit_1_img"><a href="#">
+              <div class="latest_tweets">
+                  <h3>Lv.{{info.level}} {{info.name}}</h3>
+                </div>
+        
+                <div class="big-buttons-col2">
+                  <!-- <ul>
+                    <li><input class="type{{type_index1}}" type="button" value="{{info.type1}} "></li>
+                    <li><input class="type{{type_index2}}" type="button" value="{{info.type2}}"></li>
+                    <li><input class="ability" type="button" value="{{info.ability}}"></li>
+                  </ul> -->
+                </div><img src="{{ url_for('static', filename=filename)}}" width="auto"
+                height="auto" alt="该宝可梦没有图哦～～" /></a></div>
         </div>
-        <div class="latest_tweets">
-          <h3>Lv.{{info.level}} {{info.name}}</h3>
-        </div>
-
-        <div class="big-buttons-col2">
-          <ul>
-            <li><input class="type{{type_index1}}" type="button" value="{{info.type1}} "></li>
-            <li><input class="type{{type_index2}}" type="button" value="{{info.type2}}"></li>
-            <li><input class="ability" type="button" value="{{info.ability}}"></li>
-          </ul>
-        </div>
+        
         <div class="latest_tweets">
           <h3></h3>
         </div>
@@ -98,9 +100,9 @@
         
       </ul>
       <ul class="mtype{{move_index4}}">
-        <li><a class="mtype{{move_index4}}" href=""> </i>
+        <li><a class="mtype{{move_index4}}" href="#" ></i>
             <h3>{{moves.move4.name}}</h3>
-            <p class="mtype{{move_index4}}">{{moves.move4.type}}  </p>
+            <p class="mtype{{move_index4}}">{{moves.move4.type}}</p>
             <div class="mtype{{move_index4}}"> </div>
           </a></li>
         
@@ -109,5 +111,14 @@
 
     </div>
 </body>
+
+
+<script>
+$(function(){
+  $(".mtype{{move_index4}}").click(function(){
+    alert("{{moves.move4.name}}");
+  });
+});
+</script>
 
 </html>

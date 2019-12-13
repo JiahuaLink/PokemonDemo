@@ -92,7 +92,7 @@ class Damages():
     # 随机修正值
     RANDOM_CORRECTION = 255
     
-    def damages_calc(self, moveinfo, data):
+    def damages_calc(self, moveinfo, data,myself, aims):
         ''' 伤害计算流程
             1读取能力值。
             2能力值修正。
@@ -122,8 +122,8 @@ class Damages():
             move_pp = int(moveinfo["pp"])
         else:
             move_pp = int(moveinfo["pp"])
-        our_info = data["player"]["base_info"]
-        our_statistic = data["player"]["statistic"]
+        our_info = data[myself]["base_info"]
+        our_statistic = data[myself]["statistic"]
         our_level = int(our_info["level"])
         own_type1 = our_info["type1"]
         own_type2 = our_info["type2"]
@@ -134,8 +134,8 @@ class Damages():
         own_defend_sp = int(our_statistic["defend_sp"])
         own_speed = int(our_statistic["speed"])
 
-        enemy_info = data["enemy"]["base_info"]
-        enemy_statistic = data["enemy"]["statistic"]
+        enemy_info = data[aims]["base_info"]
+        enemy_statistic = data[aims]["statistic"]
         enmey_name = enemy_info["name"]
         enemy_level = int(enemy_info["level"])
         enemy_type1 = enemy_info["type1"]
@@ -147,7 +147,7 @@ class Damages():
         enemy_defend_sp = int(enemy_statistic["defend_sp"])
         enemy_speed = int(enemy_statistic["speed"])
         
-        print("敌方体力为%d" % enemy_hp)
+        print("%s体力为%d" % (enmey_name,enemy_hp))
         level, atk, defend = self.read_stats(our_level, move_category, own_atk, own_atk_sp, enemy_defend, enemy_defend_sp)
         base_damage = self.calc_base_damage(level, move_power, atk, defend)
         bonuses_damage = self.calc_type_bonuses(move_type, own_type1,
@@ -155,11 +155,12 @@ class Damages():
         times = DamagesTimes().times_calc(move_type, enemy_type1, enemy_type2)
         times_damage = bonuses_damage * times
         damages = self.random_correction_damage(times_damage)
+
+        print("%s受到%d点伤害" % (enmey_name, damages))
+        enemy_statistic["hp"]-= damages
         if enemy_statistic["hp"] <=0:
            enemy_statistic["hp"] = 0 
-        else:
-            enemy_statistic["hp"]-= damages
-        print("%s受到%d点伤害" % (enmey_name, damages))
+        
         return data
 
     #  读取能力值

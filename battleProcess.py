@@ -12,7 +12,7 @@
 # here put the import lib
 import time
 import threading
-from playerControls import PlayerControls
+from battleControls import PlayerControls,EnemyControls
 
 
 class BattleProcess():
@@ -41,6 +41,7 @@ class BattleProcess():
             return
         self.lockEnemy.acquire()
         print("%s发起了攻击" % info["name"])
+        EnemyControls().enemycontrols(data)
         self.lockPlayer.release()
         time.sleep(0.1)
         self.enemy_rounds(data)
