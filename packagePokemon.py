@@ -23,40 +23,22 @@ class BattlePokemon():
         七项能力等级提高或降低的状态
 
         '''
-        # 能力等级初始值都为0
-        atk_level = 0
-        defend_level = 0
-        atk_sp_level = 0
-        defend_sp_level = 0
-        speed_level = 0
-        accuracy_level = 0
-        avoid_level = 0
-        base_info = {
-            "num": num,
-            "level": level,
-            "name": name,
-            "type1": type1,
-            "type2": type2,
-            "ability": ability,
-            "hp_max": hp
-
-        }
+        
         statistic = {
             "hp": hp,
-            "atk": atk,
-            "defend": defend,
-            "atk_sp": atk_sp,
-            "defend_sp": defend_sp,
-            "speed": speed
+            "攻击": atk,
+            "防御": defend,
+            "特攻": atk_sp,
+            "特防": defend_sp,
+            "速度": speed
         }
-        statistic_level = {
-            "atk_level": atk_level,
-            "defend_level": defend_level,
-            "atk_sp_level": atk_sp_level,
-            "defend_sp_level": defend_sp_level,
-            "speed_level": speed_level,
-            "accuracy_level": accuracy_level,
-            "avoid_level": avoid_level
+        battle_statistic = {
+            "hp": hp,
+            "攻击": atk,
+            "防御": defend,
+            "特攻": atk_sp,
+            "特防": defend_sp,
+            "速度": speed
         }
         # 宝可梦基本信息
         individual = {
@@ -67,20 +49,54 @@ class BattlePokemon():
             "defend_sp_v": defend_sp_v,
             "speed_v": speed_v
         }
-
         # 宝可梦的状态 濒死，异常，捆绑，混乱
         status_condition = {
-            "died":0,
-            "volatile":0,
-            "bound" : 0,
-            "confusion" : 0
+            "died": 0,
+            "volatile": 0,
+            "flinch": 0,
+            "confusion": 0,
+            "infatuation": 0,
+            "storeforce": 0,
+            "bound": 0,
+            "hardstraight": 0
         }
-        pokemon = {
-            "base_info": base_info,
+        # 离场后状态
+        base_status = {
+            "died": 0,
+            "volatile": 0,
+        }
+        # 能力等级初始值都为0
+        statistic_level = {
+            "攻击": 0,
+            "防御": 0,
+            "特攻": 0,
+            "特防": 0,
+            "速度": 0,
+            "命中": 0,
+            "闪避": 0
+        }
+        base_info = {
+            "num": num,
+            "level": level,
+            "name": name,
+            "type1": type1,
+            "type2": type2,
+            "ability": ability,
             "statistic": statistic,
             "individual": individual,
+            "status": base_status
+            
+        }
+
+        battle_info = {
+            "battle_statistic": battle_statistic,
             "statistic_level": statistic_level,
-            "status":status_condition,
+            "status": status_condition,
             "moves": moves
+        }
+
+        pokemon = {
+            "base_info": base_info,
+            "battle_info": battle_info,
         }
         return pokemon

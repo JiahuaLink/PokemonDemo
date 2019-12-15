@@ -12,7 +12,7 @@
 # here put the import lib
 import time
 import threading
-from battleControls import PlayerControls,EnemyControls
+from battleControls import PlayerControls, EnemyControls
 
 
 class BattleProcess():
@@ -20,28 +20,30 @@ class BattleProcess():
     lockEnemy = threading.Lock()
 
     def player_rounds(self, data):
-        player = data["player"]["statistic"]
-        info = data["player"]["base_info"]
-        if player["hp"] <= 0:
-            
-            return
+        player_info = data["player"]["base_info"]
+        player = data["player"]["battle_info"]
+        player_hp = player["battle_statistic"]["hp"]
         self.lockPlayer.acquire()
 
         PlayerControls().playcontrols(data)
+        if player_hp == 0:
+            print("%s倒下" % player_info["name"])
+            return
         self.lockEnemy.release()
         time.sleep(0.1)
         self.player_rounds(data)
 
     def enemy_rounds(self, data):
-        enemy = data["enemy"]["statistic"]
-        info = data["enemy"]["base_info"]
-        if enemy["hp"] <= 0:
-            
-            print("敌方倒下")
-            return
+        enemy_info = data["enemy"]["base_info"]
+        enemy_battle_info = data["enemy"]["battle_info"]
+        enemy_hp = enemy_battle_info["battle_statistic"]["hp"]
         self.lockEnemy.acquire()
-        print("%s发起了攻击" % info["name"])
+        print("%s发起了攻击" % enemy_info["name"])
         EnemyControls().enemycontrols(data)
+        if enemy_hp == 0:
+                    
+            print("%s倒下" % enemy_info["name"])
+            return
         self.lockPlayer.release()
         time.sleep(0.1)
         self.enemy_rounds(data)

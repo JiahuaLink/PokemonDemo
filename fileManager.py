@@ -24,9 +24,10 @@ class FileManager():
     BATTLE_FILE = os.path.join(abspath, 'config', BATTLE_INFO)
     RANDOMPKMON_CSV = os.path.join(abspath, 'config', RANDOMPKMON)
     LOG_FILE = os.path.join(abspath, 'log', logfile)
-    # 将数据保存到文件
+
     def save2file(self, file, data):
-        # 打开文件
+        ''' 将数据保存到文件'''
+
         fd = open(file, 'a+', encoding='utf-8-sig', newline='')
         writer = csv.writer(fd)
         for item in data:
@@ -53,14 +54,16 @@ class FileManager():
         for item in dic:
             writer.writerow(item)
         fd.close()
-    def save2log(self,text):
-        f = open(self.LOG_FILE,'a+',encoding='utf-8-sig')  
-        f.write(text)  
+
+    def save2log(self, text):
+        f = open(self.LOG_FILE, 'a+', encoding='utf-8-sig')
+        f.write(text)
         f.write("\n")
         f.close()
 
+
 class InitConfig():
-    
+
     def get_data(self, file):
         abspath = sys.path[0]
         path = os.path.join(abspath, 'config', file)

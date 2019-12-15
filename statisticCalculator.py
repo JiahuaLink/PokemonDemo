@@ -55,30 +55,12 @@ class Statistic():
     }
     
     
-    def atk_level_calc(self):
-        
-        pass
+    def stat_level_calc(self, level):
+        return int(self.base_level[level])/100
 
-    def defend_level_calc(self):
-
-        pass
-
-    def atk_sp_level_calc(self):
-
-        pass
-
-    def defend_sp_level_calc(self):
-
-        pass
-
-    def speed_level_calc(self):
-
-        pass
-
-    def accuracy_level_calc(self,accuracy,level):
+    def accuracy_level_calc(self, accuracy, level):
         return int(accuracy)*(self.accuracy_level[level])/100
-        
-
+    
     def avoid_level_calc(self):
 
         pass

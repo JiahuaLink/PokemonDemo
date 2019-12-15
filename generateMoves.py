@@ -54,9 +54,6 @@ class GenerateMove():
         move_accuracy = move_raw[6]
         # 技能点数
         move_pp = move_raw[7]
-        
-        
-
         died = move_raw[8]
         # 异常状态 中毒,烧伤,麻痹,睡眠,冰冻获取命中率
         # 中毒
@@ -69,7 +66,28 @@ class GenerateMove():
         sleep = move_raw[12]
         # 冰冻
         freeze = move_raw[13]
-        #
+        # 畏缩
+        flinch = move_raw[14]
+        # 混乱
+        confusion = move_raw[15]
+        # 着迷
+        infatuation = move_raw[16]
+        # 蓄力
+        storeforce = move_raw[17]
+        # 束缚
+        bound = move_raw[18]
+        # 硬直
+        hardstraight = move_raw[19]
+        # atk,defend,atk_sp,defen_sp 命中 闪避等级变化
+        atk = move_raw[20]
+        defend = move_raw[21]
+        atk_sp = move_raw[22]
+        defend_sp = move_raw[23]
+        speed = move_raw[24]
+        accuracy = move_raw[25]
+        avoid = move_raw[26]
+        
+        # 异常列表
         volatile = {
             "中毒": poison,
             "灼伤": burn,
@@ -77,12 +95,30 @@ class GenerateMove():
             "睡眠": sleep,
             "冰冻": freeze,
         }
-        # 选择技能
-        # print("技能%d:%s" % (num, move_name))
 
-        # print(" 编号:%s\n名称:%s\n 属性类型:%s\n 分类:%s\n 伤害:%s\n 命中率:\n 技能点数:%s\n" %
-        #       (move_num, move_name, move_type, move_power, move_category,
-        #        move_accuracy, move_pp))
+        # 能力变化
+        statistic_level = {
+            
+            "攻击": atk,
+            "防御": defend,
+            "特攻": atk_sp,
+            "特防": defend_sp,
+            "速度": speed,
+            "命中": accuracy,
+            "闪避": avoid
+        }
+        # 精灵状态 畏缩，混乱，着迷，蓄力，束缚，硬直
+        state = {
+            "濒死": died,
+            "畏缩": flinch,
+            "混乱": confusion,
+            "着迷": infatuation,
+            "蓄力": storeforce,
+            "束缚": bound,
+            "硬直": hardstraight,
+            "异常": volatile,
+            "能力": statistic_level
+        }
         move = {
             "id": move_num,
             "name": move_name,
@@ -91,6 +127,7 @@ class GenerateMove():
             "category": move_category,
             "accuracy": move_accuracy,
             "pp": move_pp,
-            "volatile":volatile
+            "state": state,
+
         }
         return move

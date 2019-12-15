@@ -11,7 +11,7 @@
 
 # here put the import lib
 import random
-from fileManager import InitConfig,FileManager
+from fileManager import InitConfig
 import randomStats as selector
 from generateMoves import GenerateMove
 from packagePokemon import BattlePokemon
@@ -60,20 +60,15 @@ class RandomPkmon():
         hp_v, atk_v, defend_v, atk_sp_v, defend_sp_v, speed_v = select.individual_selector(
         )
 
+        hp_v, atk_v, defend_v, atk_sp_v, defend_sp_v, speed_v = select.individual_selector()
         print("草丛里跳出了一只\n【LV.%s %s】【属性 %s %s】\n" %
               (level, pkmon_name, pkmon_type1, pkmon_type2))
-        # print(
-        #     " 编号:%s\n 等级:lv.%s\n 名字:%s\n 属性:%s %s\n 特性:%s\n 能力值:\n 体力:%s\n 攻击:%s\n 防御:%s\n 特攻:%s\n 特防:%s\n 速度:%s\n 个体值:\n 攻击:%s\n 防御:%s\n 特攻:%s\n 特防:%s\n 防御:%s\n 速度:%s\n 技能:%s\n"
-        #     % (serial_num, level, pkmon_name, pkmon_type1, pkmon_type2,
-        #        ability, hp_value, atk_value, defend_value, atk_sp_value,
-        #        defend_sp_value, speed_value, hp_v, atk_v, defend_v, atk_sp_v,
-        #        defend_sp_v, speed_v, moves_dict))
-        #保存随机精灵到文件
+        # 保存随机精灵到文件
         # # data = zip([serial_num], [level], [pkmon_name], [pkmon_type1],
-                # #    [pkmon_type2], [ability], [hp_value], [atk_value],
-                # #    [defend_value], [atk_sp_value], [defend_sp_value],
-                # #    [speed_value], [hp_v], [atk_v], [defend_v], [atk_sp_v],
-                #    [defend_sp_v], [speed_v], [moves_dict])
+        # #    [pkmon_type2], [ability], [hp_value], [atk_value],
+        # #    [defend_value], [atk_sp_value], [defend_sp_value],
+        # #    [speed_value], [hp_v], [atk_v], [defend_v], [atk_sp_v],
+        #    [defend_sp_v], [speed_v], [moves_dict])
         # FileManager().save2randompkmon(data)
 
         wild_pkmon = BattlePokemon().package_pkmon(
