@@ -57,9 +57,6 @@ class RandomPkmon():
 
         # 选择技能
         moves_dict = GenerateMove().random_moves()
-        hp_v, atk_v, defend_v, atk_sp_v, defend_sp_v, speed_v = select.individual_selector(
-        )
-
         hp_v, atk_v, defend_v, atk_sp_v, defend_sp_v, speed_v = select.individual_selector()
         print("草丛里跳出了一只\n【LV.%s %s】【属性 %s %s】\n" %
               (level, pkmon_name, pkmon_type1, pkmon_type2))
