@@ -88,6 +88,8 @@ class MoveManager():
         if accuracy == '变化':
             if move_name == "角钻":
                 accuracy = int(our_info["level"]) - int(enemy_info["level"])
+            else:
+                accuracy = 101 
         final_level = int(our_ac_level)-int(enmey_av_level)
 
         if final_level >= 6:
@@ -167,14 +169,13 @@ class MoveManager():
                 '''
                 判断能力提升降低
                 '''
-                if level > 0:
-                    print("%s%s提升了\n" % (my_name, style))
-                else:
-                    print("%s%s降低了\n" % (my_name, style))
+                stat_level = atk_bt_info["statistic_level"][style]
+
                 if style == '命中' or style == '闪避':
                     pass
                 else:
-                    lv_times = Statistic().stat_level_calc(level)
+                    lv_times = Statistic().stat_level_calc(level, stat_level, 
+                                                           my_name, style)
                     print("原%s值为%s" % (style, attacker_statistic[style]))
                     value = attacker_statistic[style]                                    
                     atk_bt_info["battle_statistic"][style] = int(
@@ -183,7 +184,7 @@ class MoveManager():
                     print("提升后%s值为%s" %
                           (style, atk_bt_info["battle_statistic"][style]))
                     
-                    stat_level = atk_bt_info["statistic_level"]
-                    stat_level[style] += level
+                    stat_level += level
+                    atk_bt_info["statistic_level"][style] = stat_level
                     
         return data

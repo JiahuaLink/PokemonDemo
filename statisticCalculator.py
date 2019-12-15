@@ -36,7 +36,7 @@ class Statistic():
         4: 300,
         5: 350,
         6: 400,
-    }   
+    }
     # 命中闪避等级能力变化
     accuracy_level = {
         -6: 25,
@@ -53,19 +53,19 @@ class Statistic():
         5: 350,
         6: 400,
     }
-    
-    
-    def stat_level_calc(self, level):
+
+    def stat_level_calc(self, level, stat_level, my_name, style):
+        self.stats_change_display(level, stat_level, my_name, style)
         return int(self.base_level[level])/100
 
     def accuracy_level_calc(self, accuracy, level):
         return int(accuracy)*(self.accuracy_level[level])/100
-    
+
     def avoid_level_calc(self):
 
         pass
-    
-    def stats_change_display(self):
+
+    def stats_change_display(self, level, stat_level, my_name, style):
         '''
         上限	[宝可梦]的[能力]已经无法再提高了！
         +3	    [宝可梦]的[能力]巨幅提高了！
@@ -76,4 +76,26 @@ class Statistic():
         -3	    [宝可梦]的[能力]巨幅降低了！
         下限	[宝可梦]的[能力]已经无法再降低了！
         '''
-        pass
+        if stat_level < 6 and stat_level > -6:
+            if level == 1:
+                print("%s的%s提高了" % (my_name, style))
+            elif level == 2:
+                print("%s的%s大幅提高了！" % (my_name, style))
+            elif level == 3:
+                print("%s的%s巨幅提高了！！" % (my_name, style))
+            elif level >= 3:
+                print("%s的%s已经无法再提高了" % (my_name, style))
+            elif level <= -1:
+                print("%s的%s大幅降低了！" % (my_name, style))
+            elif level <= -2:
+                print("%s的%s大幅降低了！" % (my_name, style))
+            elif level <= -3:
+                print("%s的%s巨幅降低了" % (my_name, style))
+            else:
+                pass
+        elif stat_level >=6:
+            print("%s的%s已经无法再降低了" % (my_name, style))
+            stat_level = 6
+        elif stat_level <= -6:
+            stat_level = -6
+            print("%s的%s已经无法再提高了" % (my_name, style))
