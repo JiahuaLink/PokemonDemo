@@ -174,6 +174,8 @@ class MoveManager():
                 if style == '命中' or style == '闪避':
                     pass
                 else:
+                    stat_level += level
+                    atk_bt_info["statistic_level"][style] = stat_level
                     lv_times = Statistic().stat_level_calc(level, stat_level, 
                                                            my_name, style)
                     print("原%s值为%s" % (style, attacker_statistic[style]))
@@ -184,7 +186,7 @@ class MoveManager():
                     print("提升后%s值为%s" %
                           (style, atk_bt_info["battle_statistic"][style]))
                     
-                    stat_level += level
-                    atk_bt_info["statistic_level"][style] = stat_level
+                    
+                    
                     
         return data

@@ -56,7 +56,7 @@ class Statistic():
 
     def stat_level_calc(self, level, stat_level, my_name, style):
         self.stats_change_display(level, stat_level, my_name, style)
-        return int(self.base_level[level])/100
+        return int(self.base_level[stat_level])/100
 
     def accuracy_level_calc(self, accuracy, level):
         return int(accuracy)*(self.accuracy_level[level])/100
