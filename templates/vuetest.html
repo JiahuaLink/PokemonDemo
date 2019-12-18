@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <style>
+        .red {
+            border: 11px solid red;
+        }
+
+        .green {
+            border: 11px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app" id="app">
+        {{message}}
+        <span>
+            {{ school.name }} {{ school.tel }}
+            <ul>
+                <li v-for="stat in stats"> {{ stat.name }} </li>
+            </ul>
+        </span>
+        <div class="input-num">
+            <button @click="sub">-</button>
+            <span>{{num}} </span>
+            <button @click="add">+</button>
+        </div>
+        <input type="button" value="显示隐藏" @click="changeshow">
+        <h3 v-show="isShow&&num>=9">HELLO</h3>
+        <p v-if="id==100">100的id</p>
+        <img v-bind:src="imgsrc">
+        <img :src="imgsrc" :title="imgtitle+ '12345267859'" :class="isActive?'red':''" @click="changeactive" alt="">
+        <br>
+        <img :src="imgsrc" :title="imgtitle+ '12345267859'" :class="{green:isActive} " @click="changeactive" alt="">
+
+    </div>
+    <br>
+    <div id="mask">
+        <a href="">
+            
+            <img :src="'./images/%23'+imgarray[index]" alt="">
+            <a @click="next" >next</a>
+            
+        </a>
+        
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</body>
+<script>
+    var mask = new Vue({
+        el: "#mask",
+        data: {
+            imgarray: [
+                "011.gif",
+                "012.gif",
+                "013.gif",
+                "014.gif",
+                "015.gif",
+                "016.gif",
+                "017.gif",
+                "018.gif",
+                "019.gif",
+                "020.gif",
+                "021.gif",
+                "022.gif",
+                "023.gif",
+                "024.gif",
+                "025.gif",
+                "026.gif",
+            ],
+            index: 0,
+        },
+        methods: {
+            next:function(){
+                this.index++
+            }
+        },
+    })
+    var app = new Vue({
+        // el:"#app",
+        el: "#app",
+        data: {
+            num: 10,
+            id: 100,
+            message: "Hello World!",
+            isShow: false,
+            isActive: false,
+            imgsrc: "https://img-blog.csdnimg.cn/2019120914404665.png#pic_center",
+            imgtitle: "标题",
+            array: [],
+            school: {
+                name: "jiahua",
+                tel: "123456"
+            },
+            stats: [
+                { name: "atk" },
+                { name: "defend" },
+                { name: "atksp" },
+            ]
+        },
+        methods: {
+            sub: function () {
+
+                if (this.num > 0) {
+                    this.num--
+                } else {
+                    alert("太小!")
+                }
+            },
+            add: function () {
+
+                if (this.num < 10) {
+                    this.num++
+                } else {
+                    alert("太大!")
+                }
+            },
+            changeshow: function () {
+                this.isShow = !this.isShow;
+            },
+            changeactive: function () {
+                this.isActive = !this.isActive
+            },
+
+        },
+
+
+    })
+</script>
+
+</html>
