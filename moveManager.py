@@ -175,6 +175,12 @@ class MoveManager():
                     pass
                 else:
                     stat_level += level
+                    if stat_level >= 6:
+                        print("%s的%s已经无法再降低了" % (my_name, style))
+                        stat_level = 6
+                    elif stat_level <= -6:
+                        stat_level = -6
+                        print("%s的%s已经无法再提高了" % (my_name, style))
                     atk_bt_info["statistic_level"][style] = stat_level
                     lv_times = Statistic().stat_level_calc(level, stat_level, 
                                                            my_name, style)
@@ -185,8 +191,5 @@ class MoveManager():
                     
                     print("提升后%s值为%s" %
                           (style, atk_bt_info["battle_statistic"][style]))
-                    
-                    
-                    
-                    
+
         return data
