@@ -1,6 +1,6 @@
 # pokemon
 
-网址  https://jb666.me
+
 
 pokemon口袋妖怪python实现
 0爬取口袋妖怪百科
